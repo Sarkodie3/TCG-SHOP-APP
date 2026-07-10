@@ -35,11 +35,11 @@
   .navbar-nav.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: calc(var(--announce-height) + var(--navbar-height));
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - var(--navbar-height));
     background: var(--color-bg-secondary);
     padding: 1.25rem;
     overflow-y: auto;
