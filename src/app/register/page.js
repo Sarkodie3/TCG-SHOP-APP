@@ -72,7 +72,7 @@ export default function RegisterPage() {
           <div style={{ textAlign: "center", marginBottom: "2rem" }}>
             <h1 style={{ fontSize: "1.75rem", marginBottom: "0.5rem" }}>Create an Account</h1>
             <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem" }}>
-              Join Omotenashi TCG for faster checkout and exclusive updates.
+              Join TCG SHOP KASUMI for faster checkout and exclusive updates.
             </p>
           </div>
 

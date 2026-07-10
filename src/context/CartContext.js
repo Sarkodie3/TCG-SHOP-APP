@@ -7,6 +7,7 @@ export default function CartProvider({ children }) {
   const [items, setItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
+  /** Add 1 of a product (or increment qty if already in cart) */
   const addItem = useCallback((product, variant = null) => {
     setItems((prev) => {
       const key = variant ? `${product.id}-${variant}` : product.id;
@@ -32,10 +33,21 @@ export default function CartProvider({ children }) {
     setIsOpen(true);
   }, []);
 
+  /** Remove 1 of a product (removes entirely if qty reaches 0) */
   const removeItem = useCallback((key) => {
+    setItems((prev) =>
+      prev
+        .map((i) => (i.key === key ? { ...i, qty: i.qty - 1 } : i))
+        .filter((i) => i.qty > 0)
+    );
+  }, []);
+
+  /** Remove ALL of a product regardless of qty */
+  const clearItem = useCallback((key) => {
     setItems((prev) => prev.filter((i) => i.key !== key));
   }, []);
 
+  /** Adjust qty by a delta (+1 or -1), removes if qty reaches 0 */
   const updateQty = useCallback((key, delta) => {
     setItems((prev) =>
       prev
@@ -49,7 +61,7 @@ export default function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ items, count, total, addItem, removeItem, updateQty, isOpen, setIsOpen }}
+      value={{ items, count, total, addItem, removeItem, clearItem, updateQty, isOpen, setIsOpen }}
     >
       {children}
     </CartContext.Provider>

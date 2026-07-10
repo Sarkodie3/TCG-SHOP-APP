@@ -82,8 +82,8 @@ export default function Navbar() {
       <header className={`navbar${scrolled ? " scrolled" : ""}`}>
         <div className="navbar-inner">
           {/* Logo */}
-          <Link href="/" className="navbar-logo" aria-label="Omotenashi TCG Home">
-            <Image src="/logo.jpg" alt="Omotenashi TCG" width={140} height={46} priority style={{ height: 46, width: "auto" }} />
+          <Link href="/" className="navbar-logo" aria-label="TCG SHOP KASUMI Home">
+            <Image src="/logo.jpg" alt="TCG SHOP KASUMI" width={140} height={46} priority style={{ height: 46, width: "auto" }} />
           </Link>
 
           {/* Desktop Nav */}

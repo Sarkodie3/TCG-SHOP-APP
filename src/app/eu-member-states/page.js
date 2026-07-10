@@ -2,8 +2,8 @@ import Link from "next/link";
 import { euVatRates } from "@/lib/data";
 
 export const metadata = {
-  title: "EU Member States Eligible for TCG Sales | Omotenashi TCG",
-  description: "List of EU countries eligible for VAT-included TCG sales from Omotenashi TCG Japan.",
+  title: "EU Member States Eligible for TCG Sales | TCG SHOP KASUMI",
+  description: "List of EU countries eligible for VAT-included TCG sales from TCG SHOP KASUMI Japan.",
 };
 
 export default function EuMemberStatesPage() {

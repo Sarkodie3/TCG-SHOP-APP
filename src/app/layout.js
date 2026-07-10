@@ -19,17 +19,17 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Omotenashi TCG | Japanese TCG Store",
+  title: "TCG SHOP KASUMI | Japanese TCG Store",
   description:
     "Japanese Pokémon & ONE PIECE Cards for sale. Booster BOX & Case, Single Cards, Grading Cards, Deck Set, and more. Factory sealed, worldwide shipping.",
   keywords:
     "Pokémon cards, One Piece cards, Japanese TCG, Booster Box, Single Cards, Grading, Dragon Ball cards, Disney Lorcana",
   openGraph: {
-    title: "Omotenashi TCG | Japanese TCG Store",
+    title: "TCG SHOP KASUMI | Japanese TCG Store",
     description:
       "Japanese Pokémon & ONE PIECE Cards for sale. Booster BOX & Case, Single Cards, Grading Cards, Deck Set, etc.",
     type: "website",
-    url: "https://omotenashitcg.com",
+    url: "https://tcgshoKasumi.com",
   },
 };
 

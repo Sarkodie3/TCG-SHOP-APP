@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Returns and Refunds Policy | Omotenashi TCG",
-  description: "Our returns and refunds policy for Omotenashi TCG Japanese Trading Card Game Store.",
+  title: "Returns and Refunds Policy | TCG SHOP KASUMI",
+  description: "Our returns and refunds policy for TCG SHOP KASUMI Japanese Trading Card Game Store.",
 };
 
 export default function RefundPolicyPage() {
@@ -23,7 +23,7 @@ export default function RefundPolicyPage() {
       <div className="container section">
         <div className="policy-content">
           <h2>Our Commitment</h2>
-          <p>At Omotenashi TCG, we are committed to providing authentic, high-quality products. If you experience any issues with your order, we are here to help.</p>
+          <p>At TCG SHOP KASUMI, we are committed to providing authentic, high-quality products. If you experience any issues with your order, we are here to help.</p>
 
           <h2>Eligibility for Returns</h2>
           <p>We accept returns under the following conditions:</p>

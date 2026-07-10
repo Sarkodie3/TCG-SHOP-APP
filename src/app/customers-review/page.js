@@ -2,8 +2,8 @@ import Link from "next/link";
 import { customerReviews } from "@/lib/data";
 
 export const metadata = {
-  title: "Omotenashi TCG Reviews | Omotenashi TCG | Japanese TCG Store Official Store",
-  description: "Explore Omotenashi TCG Reviews. Discover our wide range of TCG products and enjoy secure global shipping.",
+  title: "TCG SHOP KASUMI Reviews | TCG SHOP KASUMI | Japanese TCG Store Official Store",
+  description: "Explore TCG SHOP KASUMI Reviews. Discover our wide range of TCG products and enjoy secure global shipping.",
 };
 
 function StarRating({ count = 5 }) {
@@ -26,8 +26,8 @@ export default function CustomersReviewPage() {
             <span>/</span>
             <span>Customers Review</span>
           </nav>
-          <h1>Omotenashi TCG Reviews</h1>
-          <p>Real experiences from our customers around the world. See why collectors trust Omotenashi TCG.</p>
+          <h1>TCG SHOP KASUMI Reviews</h1>
+          <p>Real experiences from our customers around the world. See why collectors trust TCG SHOP KASUMI.</p>
         </div>
       </section>
 

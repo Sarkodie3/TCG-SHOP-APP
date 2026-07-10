@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Omotenashi TCG - Condition Guidelines for Single Cards",
+  title: "TCG SHOP KASUMI - Condition Guidelines for Single Cards",
   description: "These condition grades are based on our own internal standards and are NOT related in any way to third-party grading services, including PSA, BGS, or CGC.",
 };
 

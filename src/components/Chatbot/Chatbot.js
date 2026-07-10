@@ -133,7 +133,7 @@ If you haven't received a tracking email within 5 business days of your order, p
     reply: `📬 **Contact Us:**
 You can reach our support team through:
 • The **Wholesale Inquiry form** for business enquiries
-• Social media: **Facebook**, **Instagram**, **Threads** @tcg_japan_omotenashitcg
+• Social media: **Facebook**, **Instagram**, **Threads** @tcg_shop_kasumi
 
 Our team is based in Japan and responds within 24 hours.`,
   },
@@ -158,7 +158,7 @@ Order cancellations may be possible if the order hasn't been dispatched yet. Ple
   },
   {
     keywords: ["hello", "hi", "hey", "good morning", "good afternoon", "good evening", "howdy"],
-    reply: `👋 Hello! Welcome to **Omotenashi TCG** — your trusted source for authentic Japanese Trading Card Game products!
+    reply: `👋 Hello! Welcome to **TCG SHOP KASUMI** — your trusted source for authentic Japanese Trading Card Game products!
 
 How can I help you today? You can ask me about:
 • 📦 Shipping & Delivery
@@ -197,7 +197,7 @@ Try asking about:
 • PSA Grading
 • Wholesale
 
-Or reach us on **Instagram / Facebook** @tcg_japan_omotenashitcg 😊`;
+Or reach us on **Instagram / Facebook** @tcg_shop_kasumi 😊`;
 }
 
 // =====================================================
@@ -239,7 +239,7 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
-      text: `👋 Hello! Welcome to **Omotenashi TCG**!\n\nI'm your support assistant. Ask me anything about our products, shipping, returns, grading services, or wholesale inquiries!`,
+      text: `👋 Hello! Welcome to **TCG SHOP KASUMI**!\n\nI'm your support assistant. Ask me anything about our products, shipping, returns, grading services, or wholesale inquiries!`,
       isBot: true,
     },
   ]);
@@ -291,11 +291,11 @@ export default function Chatbot() {
         <div className="chatbot-header" onClick={() => setIsOpen((v) => !v)}>
           <div className="chatbot-title">
             <div className="chatbot-avatar-wrap">
-              <span>OT</span>
+              <span>KS</span>
               <span className="chatbot-online-dot" />
             </div>
             <div>
-              <p style={{ fontWeight: 700, fontSize: "0.9rem", lineHeight: 1.2 }}>Omotenashi Support</p>
+              <p style={{ fontWeight: 700, fontSize: "0.9rem", lineHeight: 1.2 }}>TCG SHOP KASUMI Support</p>
               <p style={{ fontSize: "0.72rem", opacity: 0.8 }}>Typically replies instantly</p>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function Chatbot() {
               {messages.map((msg, idx) => (
                 <div key={idx} className={`chat-msg ${msg.isBot ? "bot" : "user"}`}>
                   {msg.isBot && (
-                    <div className="chat-avatar-sm" aria-hidden="true">OT</div>
+                    <div className="chat-avatar-sm" aria-hidden="true">KS</div>
                   )}
                   <div className="chat-bubble">
                     {msg.isBot ? <MessageText text={msg.text} /> : msg.text}
@@ -330,7 +330,7 @@ export default function Chatbot() {
               {/* Typing indicator */}
               {isTyping && (
                 <div className="chat-msg bot">
-                  <div className="chat-avatar-sm">OT</div>
+                  <div className="chat-avatar-sm">KS</div>
                   <div className="chat-bubble typing-indicator">
                     <span /><span /><span />
                   </div>
