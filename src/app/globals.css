@@ -909,7 +909,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .product-card:hover .product-card-img-wrap img {
-  transform: scale(1.06);
+  transform: scale(1.1);
+  filter: brightness(1.05);
 }
 
 .product-card-badge {
