@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, lorcanaBoosters, opDecks, gradedCards } from "@/lib/data";
 
 const categories = [
   { id: "pokemon", name: "Pokémon Cards", href: "/pokemon", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
@@ -226,6 +226,67 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== OP DECKS ===== */}
+      <section className="section" aria-label="OP Decks" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">One Piece Decks</h2>
+              <div className="section-divider" />
+            </div>
+            <Link href="/collections/onepiece-deck" className="btn-ghost" id="browse-op-decks">
+              Browse All! →
+            </Link>
+          </div>
+          <div className="product-grid">
+            {opDecks.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== LORCANA BOOSTERS ===== */}
+      <section className="section" aria-label="Lorcana Boosters" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">Lorcana Booster Boxes</h2>
+              <div className="section-divider" />
+            </div>
+            <Link href="/collections/lorcana" className="btn-ghost" id="browse-lorcana">
+              Browse Lorcana! →
+            </Link>
+          </div>
+          <div className="product-grid">
+            {lorcanaBoosters.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== GRADED CARDS ===== */}
+      <section className="section" aria-label="Graded Cards" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">Graded Cards (PSA 10)</h2>
+              <div className="section-divider" />
+            </div>
+            <Link href="/collections/graded" className="btn-ghost" id="browse-graded">
+              View All Graded Cards! →
+            </Link>
+          </div>
+          <div className="product-grid">
+            {gradedCards.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* ===== CUSTOMER REVIEWS PREVIEW ===== */}
       <section className="section" aria-label="Customer reviews" style={{ paddingTop: 0 }}>
