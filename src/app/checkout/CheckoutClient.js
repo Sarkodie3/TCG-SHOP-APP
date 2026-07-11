@@ -49,8 +49,7 @@ export default function CheckoutClient() {
 
   const handleSubmit = () => {
     setIsSubmitting(true);
-    // Clear cart memory so the cart is empty when they come back
-    items.forEach(item => clearItem(item.key));
+    // Do not clear the cart here, it cancels the form submission!
   };
 
   return (

@@ -1,7 +1,19 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { useCart } from "@/context/CartContext";
 
 export default function CheckoutSuccessPage() {
+  const { items, clearItem } = useCart();
+  const clearedRef = useRef(false);
+
+  useEffect(() => {
+    if (!clearedRef.current && items.length > 0) {
+      items.forEach(item => clearItem(item.key));
+      clearedRef.current = true;
+    }
+  }, [items, clearItem]);
+
   return (
     <main style={{ padding: "6rem 2rem", background: "var(--color-bg)", minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div className="success-container">
