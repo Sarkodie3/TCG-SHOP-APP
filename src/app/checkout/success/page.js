@@ -18,18 +18,19 @@ export default function CheckoutSuccessPage() {
     <main style={{ padding: "6rem 2rem", background: "var(--color-bg)", minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div className="success-container">
         <div className="success-icon">✓</div>
-        <h1 className="success-title">Order Submitted Successfully!</h1>
-        <p className="success-message">
-          Thank you for choosing TCG SHOP KASUMI. We have received your order details and shipping information.
+        <h1 className="success-title">Thanks!!</h1>
+        <p className="success-message" style={{ color: "var(--color-text)", fontWeight: "500", fontSize: "1.1rem" }}>
+          your order has been submited successfully.
         </p>
         <div className="payment-notice">
           <p>
-            <strong>What happens next?</strong><br/>
-            A secure payment link will be sent to your email address in less than 10 minutes. Please check your inbox (and spam folder) to complete your payment and finalize the order.
+            A secure payment link will be sent to your email address in less than 10 minutes. 
+            Please check your inbox (and spam folder) to complete your payment and finalize the order. 
+            Ensure to submit again if you dont recieve a mail thanks!!
           </p>
         </div>
         <Link href="/" className="btn btn-primary mt-4">
-          Return to Homepage
+          Go back to the website
         </Link>
       </div>
 
