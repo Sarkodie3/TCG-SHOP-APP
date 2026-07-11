@@ -97,31 +97,30 @@ export default function ProductCard({ product }) {
           </div>
         )}
 
-        {/* Variant selector for BOX / CASE */}
-        {product.variants && product.variants.length > 1 && (
-          <div className="product-card-variants">
-            {product.variants.map((v, i) => (
-              <button
-                key={i}
-                className={`variant-btn${selectedVariant === i ? " active" : ""}`}
-                onClick={() => setSelectedVariant(i)}
-              >
-                {v}
-              </button>
-            ))}
+        {/* Replaced Variant selector with text as requested */}
+        {product.variants && product.variants.length > 1 && product.category !== 'grading' && product.category !== 'pokemon' && product.category !== 'onepiece' ? (
+           <div className="product-card-variants">
+             {product.variants.map((v, i) => (
+               <button
+                 key={i}
+                 className={`variant-btn${selectedVariant === i ? " active" : ""}`}
+                 onClick={() => setSelectedVariant(i)}
+               >
+                 {v}
+               </button>
+             ))}
+           </div>
+        ) : product.subcategory === "booster-box" ? (
+          <div style={{ margin: "0.5rem 0", fontSize: "0.8rem", color: "var(--color-text-secondary)", fontWeight: 500 }}>
+             Buy in Bulk and Save per BOX!!: <span style={{color: "var(--color-accent-primary)"}}>1 BOX</span>
           </div>
-        )}
+        ) : null}
 
         <div className="product-card-footer">
           <div>
             <span className="product-card-price">
               ${getPrice().toFixed(2)}
             </span>
-            {product.variants && product.variants.length > 1 && (
-              <span style={{ fontSize: "0.7rem", color: "var(--color-text-muted)", display: "block", marginTop: "2px" }}>
-                {product.variants[selectedVariant]}
-              </span>
-            )}
           </div>
 
           <button
