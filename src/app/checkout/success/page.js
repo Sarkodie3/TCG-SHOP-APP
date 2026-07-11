@@ -1,9 +1,5 @@
+"use client";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Order Received - TCG SHOP KASUMI",
-  description: "Your order has been received successfully.",
-};
 
 export default function CheckoutSuccessPage() {
   return (
