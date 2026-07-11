@@ -165,6 +165,43 @@ export default function ProductDetailClient({ product, reviews }) {
             </div>
           )}
 
+          {/* MANUAL QUANTITY OVERRIDE / SELECTOR */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem" }}>
+             <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text-secondary)" }}>Quantity:</span>
+             <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", width: "fit-content", overflow: "hidden", background: "var(--color-bg-elevated)" }}>
+                <button 
+                  onClick={() => {
+                    if (isBoosterBox && quantityMode === "case") {
+                       // Switch back to box mode if they tweak quantity
+                       setQuantityMode("box");
+                       setBoxQty(prev => Math.max(1, prev - 1));
+                    } else if (isBoosterBox) {
+                       setBoxQty(prev => Math.max(1, prev - 1));
+                    }
+                  }} 
+                  style={{ padding: "0.5rem 0.85rem", background: "transparent", border: "none", color: "var(--color-text-primary)", cursor: "pointer", fontSize: "1.1rem" }}
+                >
+                  -
+                </button>
+                <span style={{ padding: "0 1rem", fontSize: "0.95rem", fontWeight: 700 }}>
+                  {isBoosterBox && quantityMode === "case" ? CASE_QTY : boxQty}
+                </span>
+                <button 
+                  onClick={() => {
+                    if (isBoosterBox && quantityMode === "case") {
+                       setQuantityMode("box");
+                       setBoxQty(CASE_QTY + 1);
+                    } else if (isBoosterBox) {
+                       setBoxQty(prev => prev + 1);
+                    }
+                  }} 
+                  style={{ padding: "0.5rem 0.85rem", background: "transparent", border: "none", color: "var(--color-text-primary)", cursor: "pointer", fontSize: "1.1rem" }}
+                >
+                  +
+                </button>
+             </div>
+          </div>
+
           {/* ADD TO CART */}
           <button className="product-add-btn" onClick={handleAddToCart} id="add-to-cart-detail">
             🛒 Add to Cart — {getDisplayLabel() || selectedVariant || ""}

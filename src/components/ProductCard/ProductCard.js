@@ -6,26 +6,34 @@ import { useCart } from "@/context/CartContext";
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
   const [selectedVariant, setSelectedVariant] = useState(0);
+  const [cardQty, setCardQty] = useState(1);
 
   const stars = Array.from({ length: 5 }, (_, i) => (
     <span key={i} style={{ color: "var(--color-accent-gold)" }}>★</span>
   ));
 
-  // Determine price based on selected variant
+  // Determine price based on selected variant and qty
   const getPrice = () => {
+    // If it has variants and it's not a booster box
     if (product.variants && product.variants.length > 1 && selectedVariant === 1 && product.casePrice) {
-      return product.casePrice;
+      return product.casePrice * cardQty;
     }
-    return product.price;
+    return product.price * cardQty;
   };
 
   const handleAddToCart = () => {
     const variantLabel = product.variants ? product.variants[selectedVariant] : null;
-    addItem({
-      ...product,
-      price: getPrice(),
-      variantLabel,
-    });
+    for (let i = 0; i < cardQty; i++) {
+      addItem({
+        ...product,
+        price: getPrice() / cardQty,
+        variantLabel,
+      });
+    }
+  };
+
+  const handleQtyChange = (delta) => {
+    setCardQty(prev => Math.max(1, prev + delta));
   };
 
   return (
@@ -111,8 +119,15 @@ export default function ProductCard({ product }) {
              ))}
            </div>
         ) : product.subcategory === "booster-box" ? (
-          <div style={{ margin: "0.5rem 0", fontSize: "0.8rem", color: "var(--color-text-secondary)", fontWeight: 500 }}>
-             Buy in Bulk and Save per BOX!!: <span style={{color: "var(--color-accent-primary)"}}>1 BOX</span>
+          <div style={{ margin: "0.5rem 0", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+             <div style={{ fontSize: "0.8rem", color: "var(--color-text-secondary)", fontWeight: 500 }}>
+               Buy in Bulk and Save per BOX!!: <span style={{color: "var(--color-accent-primary)"}}>{cardQty} BOX{cardQty > 1 ? "ES" : ""}</span>
+             </div>
+             <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)", width: "fit-content", overflow: "hidden" }}>
+                <button onClick={() => handleQtyChange(-1)} style={{ padding: "0.25rem 0.5rem", background: "var(--color-bg-elevated)", border: "none", color: "var(--color-text-primary)", cursor: "pointer" }}>-</button>
+                <span style={{ padding: "0 0.75rem", fontSize: "0.85rem", fontWeight: 600 }}>{cardQty}</span>
+                <button onClick={() => handleQtyChange(1)} style={{ padding: "0.25rem 0.5rem", background: "var(--color-bg-elevated)", border: "none", color: "var(--color-text-primary)", cursor: "pointer" }}>+</button>
+             </div>
           </div>
         ) : null}
 
