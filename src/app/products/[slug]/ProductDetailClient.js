@@ -246,13 +246,6 @@ export default function ProductDetailClient({ product, reviews }) {
             <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>Customer Reviews</h2>
             <div className="section-divider" />
           </div>
-          <button
-            className="btn btn-secondary"
-            id="write-review-btn"
-            onClick={() => setShowReviewForm(true)}
-          >
-            ✏️ Write a Review
-          </button>
         </div>
 
         {/* Review Form Modal */}
@@ -350,10 +343,7 @@ export default function ProductDetailClient({ product, reviews }) {
           </div>
         ) : (
           <div style={{ padding: "3rem", background: "var(--color-bg-card)", borderRadius: "var(--radius-lg)", border: "1px solid var(--color-border)", textAlign: "center" }}>
-            <p style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>No reviews yet for this product. Be the first!</p>
-            <button className="btn btn-secondary" id="write-first-review-btn" onClick={() => setShowReviewForm(true)}>
-              ✏️ Write the First Review
-            </button>
+            <p style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>No reviews yet for this product.</p>
           </div>
         )}
       </div>

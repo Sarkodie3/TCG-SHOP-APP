@@ -97,13 +97,7 @@ export default function ProductCard({ product }) {
             </span>
           </div>
         )}
-        {product.reviews === 0 && (
-          <div className="product-card-reviews">
-            <Link href={`/products/${product.slug}#reviews`} className="review-count" style={{ color: "var(--color-accent-primary)" }}>
-              Write the first review?
-            </Link>
-          </div>
-        )}
+
 
         {/* Replaced Variant selector with text as requested */}
         {product.variants && product.variants.length > 1 && product.category !== 'grading' && product.category !== 'pokemon' && product.category !== 'onepiece' ? (
