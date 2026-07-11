@@ -198,6 +198,9 @@ export default function CartDrawer() {
                 className="cart-checkout-btn"
                 id="checkout-btn"
                 aria-label="Proceed to checkout"
+                onClick={() => {
+                  window.location.href = '/checkout';
+                }}
               >
                 Checkout →
               </button>
