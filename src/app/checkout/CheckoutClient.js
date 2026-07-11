@@ -148,23 +148,17 @@ export default function CheckoutClient() {
             </div>
 
             <div className="payment-method-section">
-              <h3>Select Payment Method *</h3>
-              <div className="payment-options">
-                <label className="payment-option">
-                  <input type="radio" name="Payment Method" value="Wise" required />
-                  <span className="radio-custom"></span>
-                  <div className="payment-info">
-                    <span className="payment-name">Wise (TransferWise)</span>
-                    <span className="payment-desc">Fast international bank transfer</span>
-                  </div>
+              <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", color: "var(--color-text)" }}>
+                Select Payment Method *
+              </label>
+              <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
+                  <input type="radio" name="Payment Method" value="Wise" required style={{ width: "16px", height: "16px" }} />
+                  Wise
                 </label>
-                <label className="payment-option">
-                  <input type="radio" name="Payment Method" value="Credit Card Link Payment" required />
-                  <span className="radio-custom"></span>
-                  <div className="payment-info">
-                    <span className="payment-name">Credit Card Link Payment</span>
-                    <span className="payment-desc">Pay securely via a link sent to your email</span>
-                  </div>
+                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
+                  <input type="radio" name="Payment Method" value="Credit Card Link Payment" required style={{ width: "16px", height: "16px" }} />
+                  Credit Card Link Payment
                 </label>
               </div>
             </div>
@@ -274,64 +268,6 @@ export default function CheckoutClient() {
           margin-top: 1rem;
           padding-top: 1.5rem;
           border-top: 1px solid var(--color-border);
-        }
-        .payment-options {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-        .payment-option {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          padding: 1rem;
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-md);
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-        .payment-option:hover {
-          border-color: var(--color-text-muted);
-        }
-        .payment-option input[type="radio"] {
-          display: none;
-        }
-        .radio-custom {
-          width: 20px;
-          height: 20px;
-          border: 2px solid var(--color-border);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.2s ease;
-        }
-        .payment-option input[type="radio"]:checked + .radio-custom {
-          border-color: var(--color-accent-primary);
-        }
-        .payment-option input[type="radio"]:checked + .radio-custom::after {
-          content: '';
-          width: 10px;
-          height: 10px;
-          background: var(--color-accent-primary);
-          border-radius: 50%;
-        }
-        .payment-option:has(input[type="radio"]:checked) {
-          border-color: var(--color-accent-primary);
-          background: rgba(99, 102, 241, 0.05);
-        }
-        .payment-info {
-          display: flex;
-          flex-direction: column;
-          gap: 0.2rem;
-        }
-        .payment-name {
-          font-weight: 600;
-          color: var(--color-text);
-        }
-        .payment-desc {
-          font-size: 0.85rem;
-          color: var(--color-text-muted);
         }
 
         .checkout-submit-btn {
