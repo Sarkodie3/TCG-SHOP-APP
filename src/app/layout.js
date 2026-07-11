@@ -1,22 +1,9 @@
-import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import "./responsive.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CartProvider from "@/context/CartContext";
 import Chatbot from "@/components/Chatbot/Chatbot";
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 export const metadata = {
   title: "TCG SHOP KASUMI | Japanese TCG Store",
@@ -35,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="en">
       <body>
         <CartProvider>
           <Navbar />
