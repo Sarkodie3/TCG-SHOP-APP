@@ -3,10 +3,13 @@
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutClient() {
-  const { items, total } = useCart();
+  const { items, total, clearItem } = useCart();
   const [mounted, setMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -41,6 +44,43 @@ export default function CheckoutClient() {
   const totalText = `$${total.toFixed(2)}`;
   const orderSummary = `${cartSummaryText}\n\nTOTAL: ${totalText}`;
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.target);
+    
+    // Convert FormData to object for AJAX
+    const object = {};
+    formData.forEach((value, key) => {
+        object[key] = value;
+    });
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/tcgshopkasumi@gmail.com", {
+          method: "POST",
+          headers: { 
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+          },
+          body: JSON.stringify(object)
+      });
+      
+      if (response.ok) {
+        // Clear cart after successful order
+        items.forEach(item => clearItem(item.key));
+        router.push("/checkout/success");
+      } else {
+        alert("There was an issue submitting your order. Please try again.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Network error. Please check your connection and try again.");
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="checkout-container">
       <div className="checkout-header">
@@ -50,16 +90,15 @@ export default function CheckoutClient() {
 
       <div className="checkout-layout">
         <div className="checkout-form-section">
-          <h2>Shipping Information</h2>
+          <h2>Shipping & Payment Details</h2>
           <form
-            action="https://formsubmit.co/tcgshopkasumi@gmail.com"
-            method="POST"
+            onSubmit={handleSubmit}
             className="checkout-form"
           >
             {/* FormSubmit Configuration */}
             <input type="hidden" name="_subject" value="New Order Received - TCG SHOP KASUMI!" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_autoresponse" value="Thank you for your order! We have received your shipping information and will be processing it shortly." />
+            <input type="hidden" name="_captcha" value="false" />
             
             {/* Order Data */}
             <input type="hidden" name="Order Details" value={orderSummary} />
@@ -108,8 +147,30 @@ export default function CheckoutClient() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary checkout-submit-btn">
-              Submit Order
+            <div className="payment-method-section">
+              <h3>Select Payment Method *</h3>
+              <div className="payment-options">
+                <label className="payment-option">
+                  <input type="radio" name="Payment Method" value="Wise" required />
+                  <span className="radio-custom"></span>
+                  <div className="payment-info">
+                    <span className="payment-name">Wise (TransferWise)</span>
+                    <span className="payment-desc">Fast international bank transfer</span>
+                  </div>
+                </label>
+                <label className="payment-option">
+                  <input type="radio" name="Payment Method" value="Credit Card Link Payment" required />
+                  <span className="radio-custom"></span>
+                  <div className="payment-info">
+                    <span className="payment-name">Credit Card Link Payment</span>
+                    <span className="payment-desc">Pay securely via a link sent to your email</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" className="btn btn-primary checkout-submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? "Processing..." : "Submit Order"}
             </button>
             <p className="secure-badge">
               🔒 Your information is secure and encrypted
@@ -169,6 +230,11 @@ export default function CheckoutClient() {
           color: var(--color-text);
           font-weight: 600;
         }
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          color: var(--color-text);
+        }
         .checkout-form {
           display: flex;
           flex-direction: column;
@@ -189,7 +255,7 @@ export default function CheckoutClient() {
           color: var(--color-text-muted);
           font-weight: 500;
         }
-        input {
+        input[type="text"], input[type="email"], input[type="tel"] {
           padding: 0.8rem 1rem;
           border-radius: var(--radius-sm);
           border: 1px solid var(--color-border);
@@ -203,13 +269,82 @@ export default function CheckoutClient() {
           border-color: var(--color-accent-primary);
           box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
         }
-        .checkout-submit-btn {
+        
+        .payment-method-section {
           margin-top: 1rem;
+          padding-top: 1.5rem;
+          border-top: 1px solid var(--color-border);
+        }
+        .payment-options {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .payment-option {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem;
+          border: 1px solid var(--color-border);
+          border-radius: var(--radius-md);
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .payment-option:hover {
+          border-color: var(--color-text-muted);
+        }
+        .payment-option input[type="radio"] {
+          display: none;
+        }
+        .radio-custom {
+          width: 20px;
+          height: 20px;
+          border: 2px solid var(--color-border);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+        }
+        .payment-option input[type="radio"]:checked + .radio-custom {
+          border-color: var(--color-accent-primary);
+        }
+        .payment-option input[type="radio"]:checked + .radio-custom::after {
+          content: '';
+          width: 10px;
+          height: 10px;
+          background: var(--color-accent-primary);
+          border-radius: 50%;
+        }
+        .payment-option:has(input[type="radio"]:checked) {
+          border-color: var(--color-accent-primary);
+          background: rgba(99, 102, 241, 0.05);
+        }
+        .payment-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+        .payment-name {
+          font-weight: 600;
+          color: var(--color-text);
+        }
+        .payment-desc {
+          font-size: 0.85rem;
+          color: var(--color-text-muted);
+        }
+
+        .checkout-submit-btn {
+          margin-top: 1.5rem;
           width: 100%;
           padding: 1.2rem;
           font-size: 1.1rem;
           font-weight: 600;
           letter-spacing: 0.5px;
+        }
+        .checkout-submit-btn:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
         }
         .secure-badge {
           text-align: center;
