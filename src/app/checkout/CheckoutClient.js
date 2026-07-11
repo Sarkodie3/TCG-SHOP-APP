@@ -52,7 +52,7 @@ export default function CheckoutClient() {
         <div className="checkout-form-section">
           <h2>Shipping Information</h2>
           <form
-            action="https://formsubmit.co/tcgshopkamsumi@gmail.com"
+            action="https://formsubmit.co/tcgshopkasumi@gmail.com"
             method="POST"
             className="checkout-form"
           >
