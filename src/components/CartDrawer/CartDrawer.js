@@ -1,9 +1,11 @@
 "use client";
 import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function CartDrawer() {
   const { items, isOpen, setIsOpen, total, count, removeItem, updateQty, clearItem } = useCart();
+  const router = useRouter();
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) setIsOpen(false);
@@ -199,7 +201,8 @@ export default function CartDrawer() {
                 id="checkout-btn"
                 aria-label="Proceed to checkout"
                 onClick={() => {
-                  window.location.href = '/checkout';
+                  setIsOpen(false);
+                  router.push('/checkout');
                 }}
               >
                 Checkout →
