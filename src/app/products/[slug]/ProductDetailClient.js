@@ -117,7 +117,7 @@ export default function ProductDetailClient({ product, reviews }) {
                 className={`bulk-case-btn${quantityMode === "case" ? " active" : ""}`}
                 onClick={() => setQuantityMode("case")}
               >
-                Case ({CASE_QTY}BOX)
+                Case 【{CASE_QTY}BOX】
               </button>
             </div>
           )}
