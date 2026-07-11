@@ -3,13 +3,26 @@ import ProductCard from "@/components/ProductCard/ProductCard";
 import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, lorcanaBoosters, opDecks, gradedCards } from "@/lib/data";
 
 const categories = [
-  { id: "pokemon", name: "Pokémon Cards", href: "/pokemon", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
-  { id: "onepiece", name: "One Piece Cards", href: "/one-piece", emoji: "⚓", desc: "OP Booster Boxes & Singles" },
-  { id: "dragonball", name: "Dragon Ball Cards", href: "/dragon-ball", emoji: "🐉", desc: "FB Booster BOX & CASE" },
-  { id: "lorcana", name: "Disney LORCANA", href: "/disney-lorcana", emoji: "✨", desc: "Booster Boxes & More" },
+  { id: "pokemon", name: "Pokémon Cards", href: "/collections/pokemon-booster-box", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
+  { id: "onepiece", name: "One Piece Cards", href: "/collections/onepiece-booster-box", emoji: "⚓", desc: "OP Booster Boxes & Singles" },
+  { id: "lorcana", name: "Disney LORCANA", href: "/collections/lorcana", emoji: "✨", desc: "Booster Boxes & More" },
+  { id: "grading", name: "PSA Graded Cards", href: "/collections/graded", emoji: "🏆", desc: "PSA 10 Certified Cards" },
 ];
 
-function StarRating({ count = 5 }) {
+// New arrivals = products with badge "new"
+const newArrivals = [
+  ...pokemonBoosterBoxes.filter(p => p.badge === "new"),
+  ...onePieceBoosterBoxes.filter(p => p.badge === "new"),
+].slice(0, 4);
+
+// Hot products = products with badge "hot"
+const hotProducts = [
+  ...pokemonBoosterBoxes.filter(p => p.badge === "hot"),
+  ...onePieceBoosterBoxes.filter(p => p.badge === "hot"),
+  ...deckSets.filter(p => p.badge === "hot"),
+].slice(0, 4);
+
+function StarRating() {
   return (
     <div className="stars">
       {Array.from({ length: 5 }).map((_, i) => (
@@ -41,10 +54,10 @@ export default function HomePage() {
               Authentic Japanese Pokémon &amp; ONE PIECE Trading Cards. Booster BOX &amp; Case, Single Cards, Grading Cards, Deck Sets — factory sealed &amp; ready to ship.
             </p>
             <div className="hero-actions">
-              <Link href="/pokemon" className="btn btn-primary" id="hero-shop-pokemon">
+              <Link href="/collections/pokemon-booster-box" className="btn btn-primary" id="hero-shop-pokemon">
                 Shop Pokémon Cards
               </Link>
-              <Link href="/one-piece" className="btn btn-secondary" id="hero-shop-onepiece">
+              <Link href="/collections/onepiece-booster-box" className="btn btn-secondary" id="hero-shop-onepiece">
                 One Piece Cards
               </Link>
             </div>
@@ -93,11 +106,11 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <div>
-              <h2 className="section-title">Explore Our Deck-Building Collections</h2>
+              <h2 className="section-title">Explore Our Collections</h2>
               <div className="section-divider" />
             </div>
-            <Link href="/collections/all" className="btn-ghost">
-              Browse All Deck Options →
+            <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-all-collections">
+              Browse All →
             </Link>
           </div>
           <div className="category-grid">
@@ -139,8 +152,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== NEW ARRIVALS ===== */}
+      {newArrivals.length > 0 && (
+        <section className="section" aria-label="New Arrivals">
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <h2 className="section-title">🆕 New Arrivals</h2>
+                <div className="section-divider" />
+              </div>
+              <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-new-arrivals">
+                See All New →
+              </Link>
+            </div>
+            <div className="product-grid">
+              {newArrivals.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ===== HOT PRODUCTS ===== */}
+      {hotProducts.length > 0 && (
+        <section className="section" aria-label="Hot Products" style={{ paddingTop: 0 }}>
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <h2 className="section-title">🔥 Hot Products</h2>
+                <div className="section-divider" />
+              </div>
+              <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-hot-products">
+                See All Hot →
+              </Link>
+            </div>
+            <div className="product-grid">
+              {hotProducts.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ===== POKEMON BOOSTER BOXES ===== */}
-      <section className="section" aria-label="Pokémon Booster Boxes">
+      <section className="section" aria-label="Pokémon Booster Boxes" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-header">
             <div>
