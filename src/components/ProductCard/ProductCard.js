@@ -27,8 +27,7 @@ export default function ProductCard({ product }) {
       addItem({
         ...product,
         price: getPrice() / cardQty,
-        variantLabel,
-      });
+      }, variantLabel);
     }
   };
 

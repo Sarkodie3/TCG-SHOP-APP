@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function CheckoutClient() {
-  const { cartItems, getCartTotal } = useCart();
+  const { items, total } = useCart();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function CheckoutClient() {
 
   if (!mounted) return null;
 
-  if (cartItems.length === 0) {
+  if (items.length === 0) {
     return (
       <div style={{ textAlign: "center", padding: "4rem" }}>
         <h2>Your cart is empty</h2>
@@ -29,16 +29,16 @@ export default function CheckoutClient() {
   }
 
   // Format cart contents for the email
-  const cartSummaryText = cartItems
+  const cartSummaryText = items
     .map(
       (item) =>
-        `${item.quantity}x ${item.name} ${item.variantLabel ? `(${item.variantLabel})` : ""} - $${(
-          item.price * item.quantity
+        `${item.qty}x ${item.name} ${item.variant ? `(${item.variant})` : ""} - $${(
+          item.price * item.qty
         ).toFixed(2)}`
     )
     .join("\n");
   
-  const totalText = `$${getCartTotal().toFixed(2)}`;
+  const totalText = `$${total.toFixed(2)}`;
   const orderSummary = `${cartSummaryText}\n\nTOTAL: ${totalText}`;
 
   return (
@@ -120,24 +120,24 @@ export default function CheckoutClient() {
         <div className="checkout-summary-section">
           <h2>Order Summary</h2>
           <div className="checkout-items">
-            {cartItems.map((item) => (
-              <div key={`${item.id}-${item.variantLabel}`} className="checkout-item">
+            {items.map((item) => (
+              <div key={`${item.id}-${item.variant}`} className="checkout-item">
                 <div className="checkout-item-info">
-                  <span className="checkout-item-qty">{item.quantity}x</span>
+                  <span className="checkout-item-qty">{item.qty}x</span>
                   <div>
                     <p className="checkout-item-name">{item.name}</p>
-                    {item.variantLabel && (
-                      <p className="checkout-item-variant">{item.variantLabel}</p>
+                    {item.variant && (
+                      <p className="checkout-item-variant">{item.variant}</p>
                     )}
                   </div>
                 </div>
-                <p className="checkout-item-price">${(item.price * item.quantity).toFixed(2)}</p>
+                <p className="checkout-item-price">${(item.price * item.qty).toFixed(2)}</p>
               </div>
             ))}
           </div>
           <div className="checkout-total">
             <span>Total</span>
-            <span>${getCartTotal().toFixed(2)}</span>
+            <span>${total.toFixed(2)}</span>
           </div>
         </div>
       </div>
