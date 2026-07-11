@@ -11,8 +11,11 @@ export default function CheckoutClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
+  const [origin, setOrigin] = useState("");
+
   useEffect(() => {
     setMounted(true);
+    setOrigin(window.location.origin);
   }, []);
 
   if (!mounted) return null;
@@ -44,41 +47,10 @@ export default function CheckoutClient() {
   const totalText = `$${total.toFixed(2)}`;
   const orderSummary = `${cartSummaryText}\n\nTOTAL: ${totalText}`;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setIsSubmitting(true);
-
-    const formData = new FormData(e.target);
-    
-    // Convert FormData to object for AJAX
-    const object = {};
-    formData.forEach((value, key) => {
-        object[key] = value;
-    });
-    
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/tcgshopkasumi@gmail.com", {
-          method: "POST",
-          headers: { 
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-          },
-          body: JSON.stringify(object)
-      });
-      
-      if (response.ok) {
-        // Clear cart after successful order
-        items.forEach(item => clearItem(item.key));
-        router.push("/checkout/success");
-      } else {
-        alert("There was an issue submitting your order. Please try again.");
-        setIsSubmitting(false);
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Network error. Please check your connection and try again.");
-      setIsSubmitting(false);
-    }
+    // Clear cart memory so the cart is empty when they come back
+    items.forEach(item => clearItem(item.key));
   };
 
   return (
@@ -92,6 +64,8 @@ export default function CheckoutClient() {
         <div className="checkout-form-section">
           <h2>Shipping & Payment Details</h2>
           <form
+            action="https://formsubmit.co/tcgshopkasumi@gmail.com"
+            method="POST"
             onSubmit={handleSubmit}
             className="checkout-form"
           >
@@ -99,6 +73,7 @@ export default function CheckoutClient() {
             <input type="hidden" name="_subject" value="New Order Received - TCG SHOP KASUMI!" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
+            {origin && <input type="hidden" name="_next" value={`${origin}/checkout/success`} />}
             
             {/* Order Data */}
             <input type="hidden" name="Order Details" value={orderSummary} />
