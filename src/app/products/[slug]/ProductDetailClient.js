@@ -2,14 +2,57 @@
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 
+const BULK_QUANTITIES = [1, 5, 10, 15, 20];
+const CASE_QTY = 12;
+
 export default function ProductDetailClient({ product, reviews }) {
   const { addItem } = useCart();
+
+  const isBoosterBox = product.subcategory === "booster-box";
+  const casePrice = product.casePrice || product.price * CASE_QTY;
+
+  // Quantity mode: "box" = individual boxes, "case" = case of 12
+  const [quantityMode, setQuantityMode] = useState("box"); // "box" | "case"
+  const [boxQty, setBoxQty] = useState(1);
+
+  // For non-booster-box products (singles, decks etc.)
   const [selectedVariant, setSelectedVariant] = useState(
     product.variants && product.variants.length > 0 ? product.variants[0] : null
   );
-  
+
+  // Review form state
+  const [showReviewForm, setShowReviewForm] = useState(false);
+  const [reviewForm, setReviewForm] = useState({ name: "", rating: 5, title: "", text: "" });
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
+
+  // Compute displayed price
+  const getDisplayPrice = () => {
+    if (!isBoosterBox) return product.price;
+    if (quantityMode === "case") return casePrice;
+    return product.price * boxQty;
+  };
+
+  const getDisplayLabel = () => {
+    if (!isBoosterBox) return "";
+    if (quantityMode === "case") return `1 CASE (${CASE_QTY} BOXES)`;
+    return `${boxQty} BOX${boxQty > 1 ? "ES" : ""}`;
+  };
+
   const handleAddToCart = () => {
-    addItem(product, selectedVariant);
+    if (isBoosterBox) {
+      const qty = quantityMode === "case" ? CASE_QTY : boxQty;
+      for (let i = 0; i < qty; i++) {
+        addItem({ ...product, price: product.price });
+      }
+    } else {
+      addItem({ ...product, variantLabel: selectedVariant });
+    }
+  };
+
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    setReviewSubmitted(true);
+    setShowReviewForm(false);
   };
 
   const emoji = product.category === "pokemon" ? "⚡" : product.category === "onepiece" ? "⚓" : product.category === "lorcana" ? "✨" : product.category === "dragonball" ? "🐉" : "🃏";
@@ -21,14 +64,13 @@ export default function ProductDetailClient({ product, reviews }) {
         <div className="product-detail-images">
           <div className="product-main-image" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10rem", overflow: "hidden" }}>
             {product.image ? (
-              <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={product.image} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             ) : emoji}
           </div>
           <div className="product-thumbnails">
             <div className="product-thumb active" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem", background: "var(--color-bg-elevated)", overflow: "hidden" }}>
-              {product.image ? <img src={product.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : emoji}
+              {product.image ? <img src={product.image} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : emoji}
             </div>
-            {/* Mock extra thumbnails */}
             <div className="product-thumb" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem", background: "var(--color-bg-elevated)", opacity: 0.6 }}>
               📦
             </div>
@@ -42,7 +84,7 @@ export default function ProductDetailClient({ product, reviews }) {
         <div className="product-detail-info">
           <p className="product-brand">{product.brand}</p>
           <h1>{product.name}</h1>
-          
+
           <div className="product-card-reviews" style={{ marginBottom: "1.5rem" }}>
             <div className="stars">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -50,13 +92,50 @@ export default function ProductDetailClient({ product, reviews }) {
               ))}
             </div>
             <span className="review-count">
-              {product.reviews} {product.reviews === 1 ? "review" : "reviews"}
+              {product.reviews || 0} {product.reviews === 1 ? "review" : "reviews"}
             </span>
           </div>
 
+          {/* BULK BUY SECTION — Booster Boxes Only */}
+          {isBoosterBox && (
+            <div className="bulk-buy-section">
+              <p className="bulk-buy-label">
+                Buy in Bulk and Save per BOX!!: <strong>{getDisplayLabel()}</strong>
+              </p>
+              <div className="bulk-qty-row">
+                {BULK_QUANTITIES.map((q) => (
+                  <button
+                    key={q}
+                    className={`bulk-qty-btn${quantityMode === "box" && boxQty === q ? " active" : ""}`}
+                    onClick={() => { setQuantityMode("box"); setBoxQty(q); }}
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+              <button
+                className={`bulk-case-btn${quantityMode === "case" ? " active" : ""}`}
+                onClick={() => setQuantityMode("case")}
+              >
+                Case ({CASE_QTY}BOX)
+              </button>
+            </div>
+          )}
+
+          {/* PRICE */}
           <div className="product-detail-price">
-            ${product.price.toFixed(2)}
+            ${getDisplayPrice().toFixed(2)}
+            {isBoosterBox && (
+              <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", fontWeight: 400, marginLeft: "0.5rem" }}>
+                {quantityMode === "case"
+                  ? `($${(casePrice / CASE_QTY).toFixed(2)} / BOX)`
+                  : boxQty > 1 ? `($${product.price.toFixed(2)} / BOX)` : ""}
+              </span>
+            )}
           </div>
+          <p style={{ fontSize: "0.85rem", color: "var(--color-accent-primary)", marginBottom: "1rem" }}>
+            Shipping calculated at checkout
+          </p>
 
           <div style={{ color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "2rem" }}>
             {product.description ? (
@@ -66,8 +145,8 @@ export default function ProductDetailClient({ product, reviews }) {
             )}
           </div>
 
-          {/* Variants */}
-          {product.variants && product.variants.length > 0 && (
+          {/* VARIANTS — Non-booster-box products */}
+          {!isBoosterBox && product.variants && product.variants.length > 0 && (
             <div className="product-variants">
               <p className="variant-label">
                 Select Option: <span style={{ color: "var(--color-text-primary)" }}>{selectedVariant}</span>
@@ -86,17 +165,16 @@ export default function ProductDetailClient({ product, reviews }) {
             </div>
           )}
 
-          {/* Add to Cart */}
+          {/* ADD TO CART */}
           <button className="product-add-btn" onClick={handleAddToCart} id="add-to-cart-detail">
-            Add to Cart
+            🛒 Add to Cart — {getDisplayLabel() || selectedVariant || ""}
           </button>
 
           {/* Additional Info */}
           <div className="product-meta">
             <div className="product-meta-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
+                <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
               </svg>
               <span>Ships within 2-5 business days from Japan</span>
             </div>
@@ -112,7 +190,13 @@ export default function ProductDetailClient({ product, reviews }) {
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
                 <line x1="12" y1="22.08" x2="12" y2="12" />
               </svg>
-              <span>Duties & Taxes collected at checkout</span>
+              <span>Duties &amp; Taxes collected at checkout</span>
+            </div>
+            <div className="product-meta-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="1" y="3" width="15" height="13" /><polygon points="16 8 20 8 23 11 23 16 16 16 16 8" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+              <span>Shipping by Total Order Weight — calculated at checkout</span>
             </div>
           </div>
         </div>
@@ -120,9 +204,90 @@ export default function ProductDetailClient({ product, reviews }) {
 
       {/* Reviews Section */}
       <div className="container section" id="reviews">
-        <h2 className="section-title">Customer Reviews</h2>
-        <div className="section-divider" style={{ marginBottom: "2rem" }} />
-        
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div>
+            <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>Customer Reviews</h2>
+            <div className="section-divider" />
+          </div>
+          <button
+            className="btn btn-secondary"
+            id="write-review-btn"
+            onClick={() => setShowReviewForm(true)}
+          >
+            ✏️ Write a Review
+          </button>
+        </div>
+
+        {/* Review Form Modal */}
+        {showReviewForm && (
+          <div className="review-modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) setShowReviewForm(false); }}>
+            <div className="review-modal">
+              <div className="review-modal-header">
+                <h3>Write a Review</h3>
+                <button className="review-modal-close" onClick={() => setShowReviewForm(false)}>✕</button>
+              </div>
+              <form onSubmit={handleReviewSubmit} className="review-form">
+                <div className="review-form-field">
+                  <label>Your Name *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. John D."
+                    value={reviewForm.name}
+                    onChange={(e) => setReviewForm({ ...reviewForm, name: e.target.value })}
+                  />
+                </div>
+                <div className="review-form-field">
+                  <label>Rating *</label>
+                  <div className="review-star-select">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        type="button"
+                        key={star}
+                        className={`star-pick${reviewForm.rating >= star ? " selected" : ""}`}
+                        onClick={() => setReviewForm({ ...reviewForm, rating: star })}
+                      >
+                        ★
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="review-form-field">
+                  <label>Review Title *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Summarize your experience"
+                    value={reviewForm.title}
+                    onChange={(e) => setReviewForm({ ...reviewForm, title: e.target.value })}
+                  />
+                </div>
+                <div className="review-form-field">
+                  <label>Your Review *</label>
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder="Tell us what you think about this product..."
+                    value={reviewForm.text}
+                    onChange={(e) => setReviewForm({ ...reviewForm, text: e.target.value })}
+                  />
+                </div>
+                <div style={{ display: "flex", gap: "1rem" }}>
+                  <button type="submit" className="btn btn-primary" style={{ flex: 1 }}>Submit Review</button>
+                  <button type="button" className="btn btn-secondary" onClick={() => setShowReviewForm(false)}>Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {/* Success message */}
+        {reviewSubmitted && (
+          <div style={{ background: "rgba(34,197,94,0.1)", border: "1px solid #22c55e", borderRadius: "var(--radius-md)", padding: "1rem 1.5rem", marginBottom: "1.5rem", color: "#22c55e", fontWeight: 600 }}>
+            ✅ Thank you! Your review has been submitted and is pending approval.
+          </div>
+        )}
+
         {reviews && reviews.length > 0 ? (
           <div className="reviews-grid">
             {reviews.map((review) => (
@@ -148,8 +313,10 @@ export default function ProductDetailClient({ product, reviews }) {
           </div>
         ) : (
           <div style={{ padding: "3rem", background: "var(--color-bg-card)", borderRadius: "var(--radius-lg)", border: "1px solid var(--color-border)", textAlign: "center" }}>
-            <p style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>No reviews yet for this product.</p>
-            <button className="btn btn-secondary">Write a Review</button>
+            <p style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>No reviews yet for this product. Be the first!</p>
+            <button className="btn btn-secondary" id="write-first-review-btn" onClick={() => setShowReviewForm(true)}>
+              ✏️ Write the First Review
+            </button>
           </div>
         )}
       </div>
