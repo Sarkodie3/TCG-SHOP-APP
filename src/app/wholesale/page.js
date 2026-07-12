@@ -2,8 +2,8 @@ import Link from "next/link";
 import WholesaleForm from "./WholesaleForm";
 
 export const metadata = {
-  title: "Wholesale Trading Cards | TCG SHOP KASUMI Japan B2B Inquiries",
-  description: "Looking for Japanese trading cards in bulk? TCG SHOP KASUMI offers wholesale deals with flexible pricing, secure shipping, and fast response for global buyers.",
+  title: "Wholesale Trading Cards | KAGAMI Japan B2B Inquiries",
+  description: "Looking for Japanese trading cards in bulk? KAGAMI offers wholesale deals with flexible pricing, secure shipping, and fast response for global buyers.",
 };
 
 export default function WholesalePage() {
@@ -46,7 +46,7 @@ export default function WholesalePage() {
           {/* What We Offer */}
           <div className="policy-content" style={{ paddingTop: 0 }}>
             <h2>What We Offer</h2>
-            <p>TCG SHOP KASUMI specializes in authentic Japanese Trading Card Game products, including:</p>
+            <p>KAGAMI specializes in authentic Japanese Trading Card Game products, including:</p>
             <ul>
               <li>Pokémon TCG — Booster Boxes, Cases, Decks, and Single Cards</li>
               <li>One Piece TCG — Booster Boxes, Cases, and Single Cards</li>

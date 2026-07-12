@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Brand */}
           <div className="footer-brand">
-            <Image src="/logo.jpg" alt="TCG SHOP KASUMI" width={140} height={44} style={{ height: 44, width: "auto", marginBottom: "1rem" }} />
+            <Image src="/kagami-logo.png" alt="KAGAMI" width={140} height={44} style={{ height: 44, width: "auto", marginBottom: "1rem" }} />
             <p>
               Your trusted source for authentic Japanese Trading Card Game products. Pokémon &amp; ONE PIECE Cards, Booster Boxes, Single Cards, and more — shipped worldwide.
             </p>
@@ -68,7 +68,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>© {year} TCG SHOP KASUMI | Japanese TCG Store. All rights reserved.</p>
+          <p>© {year} KAGAMI | Japanese TCG Store. All rights reserved.</p>
           <div className="payment-badges" aria-label="Accepted payment methods">
             {["VISA", "MC", "AMEX", "PayPal", "Klarna"].map((m) => (
               <span key={m} className="payment-badge">{m}</span>

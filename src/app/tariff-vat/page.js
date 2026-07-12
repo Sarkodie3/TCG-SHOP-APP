@@ -2,7 +2,7 @@ import Link from "next/link";
 import { euVatRates } from "@/lib/data";
 
 export const metadata = {
-  title: "TCG Tariff & VAT Page | TCG SHOP KASUMI - Friendly Guide",
+  title: "TCG Tariff & VAT Page | KAGAMI - Friendly Guide",
   description: "All duties, taxes, and import fees (including VAT and GST) are collected at checkout for supported countries.",
 };
 

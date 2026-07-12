@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Shipping Policy | TCG SHOP KASUMI",
-  description: "Clear shipping policy for TCG SHOP KASUMI. Orders shipped within 2–5 business days from Japan.",
+  title: "Shipping Policy | KAGAMI",
+  description: "Clear shipping policy for KAGAMI. Orders shipped within 2–5 business days from Japan.",
 };
 
 export default function ShippingPolicyPage() {

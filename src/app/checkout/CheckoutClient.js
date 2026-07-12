@@ -69,7 +69,7 @@ export default function CheckoutClient() {
             className="checkout-form"
           >
             {/* FormSubmit Configuration */}
-            <input type="hidden" name="_subject" value="New Order Received - TCG SHOP KASUMI!" />
+            <input type="hidden" name="_subject" value="New Order Received - KAGAMI!" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             {origin && <input type="hidden" name="_next" value={`${origin}/checkout/success`} />}

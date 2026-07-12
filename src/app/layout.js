@@ -6,17 +6,17 @@ import CartProvider from "@/context/CartContext";
 import Chatbot from "@/components/Chatbot/Chatbot";
 
 export const metadata = {
-  title: "TCG SHOP KASUMI | Japanese TCG Store",
+  title: "KAGAMI | Japanese TCG Store",
   description:
     "Japanese Pokémon & ONE PIECE Cards for sale. Booster BOX & Case, Single Cards, Grading Cards, Deck Set, and more. Factory sealed, worldwide shipping.",
   keywords:
     "Pokémon cards, One Piece cards, Japanese TCG, Booster Box, Single Cards, Grading, Dragon Ball cards, Disney Lorcana",
   openGraph: {
-    title: "TCG SHOP KASUMI | Japanese TCG Store",
+    title: "KAGAMI | Japanese TCG Store",
     description:
       "Japanese Pokémon & ONE PIECE Cards for sale. Booster BOX & Case, Single Cards, Grading Cards, Deck Set, etc.",
     type: "website",
-    url: "https://tcgshoKasumi.com",
+    url: "https://kagami-tcg.com",
   },
 };
 

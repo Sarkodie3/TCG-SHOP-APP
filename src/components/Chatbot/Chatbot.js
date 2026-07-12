@@ -133,7 +133,7 @@ If you haven't received a tracking email within 5 business days of your order, p
     reply: `📬 **Contact Us:**
 You can reach our support team through:
 • The **Wholesale Inquiry form** for business enquiries
-• Social media: **Facebook**, **Instagram**, **Threads** @tcg_shop_kasumi
+• Social media: **Facebook**, **Instagram**, **Threads** @kagami_tcg
 
 Our team is based in Japan and responds within 24 hours.`,
   },
@@ -158,7 +158,7 @@ Order cancellations may be possible if the order hasn't been dispatched yet. Ple
   },
   {
     keywords: ["hello", "hi", "hey", "good morning", "good afternoon", "good evening", "howdy"],
-    reply: `👋 Hello! Welcome to **TCG SHOP KASUMI** — your trusted source for authentic Japanese Trading Card Game products!
+    reply: `👋 Hello! Welcome to **KAGAMI** — your trusted source for authentic Japanese Trading Card Game products!
 
 How can I help you today? You can ask me about:
 • 📦 Shipping & Delivery
@@ -197,7 +197,7 @@ Try asking about:
 • PSA Grading
 • Wholesale
 
-Or reach us on **Instagram / Facebook** @tcg_shop_kasumi 😊`;
+Or reach us on **Instagram / Facebook** @kagami_tcg 😊`;
 }
 
 // =====================================================
@@ -239,7 +239,7 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
-      text: `👋 Hello! Welcome to **TCG SHOP KASUMI**!\n\nI'm your support assistant. Ask me anything about our products, shipping, returns, grading services, or wholesale inquiries!`,
+      text: `👋 Hello! Welcome to **KAGAMI**!\n\nI'm your support assistant. Ask me anything about our products, shipping, returns, grading services, or wholesale inquiries!`,
       isBot: true,
     },
   ]);
@@ -295,7 +295,7 @@ export default function Chatbot() {
               <span className="chatbot-online-dot" />
             </div>
             <div>
-              <p style={{ fontWeight: 700, fontSize: "0.9rem", lineHeight: 1.2 }}>TCG SHOP KASUMI Support</p>
+              <p style={{ fontWeight: 700, fontSize: "0.9rem", lineHeight: 1.2 }}>KAGAMI Support</p>
               <p style={{ fontSize: "0.72rem", opacity: 0.8 }}>Typically replies instantly</p>
             </div>
           </div>

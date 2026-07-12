@@ -1,8 +1,8 @@
 import CheckoutClient from "./CheckoutClient";
 
 export const metadata = {
-  title: "Checkout - TCG SHOP KASUMI",
-  description: "Secure checkout for TCG SHOP KASUMI",
+  title: "Checkout - KAGAMI",
+  description: "Secure checkout for KAGAMI",
 };
 
 export default function CheckoutPage() {
