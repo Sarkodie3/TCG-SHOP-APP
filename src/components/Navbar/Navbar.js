@@ -23,9 +23,7 @@ const navLinks = [
     label: "One Piece Cards",
     href: "/one-piece",
     children: [
-      { label: "OP - Booster BOX & CASE", href: "/collections/onepiece-booster-box" },
-      { label: "OP - Single Card/Promo", href: "/collections/onepiece-single" },
-      { label: "OP - Decks", href: "/collections/onepiece-deck" },
+      { label: "Booster Boxes & Case", href: "/collections/onepiece-boxes" },
     ],
   },
   { label: "Disney LORCANA", href: "/disney-lorcana" },

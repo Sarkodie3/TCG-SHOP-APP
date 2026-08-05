@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, lorcanaBoosters, opDecks, gradedCards, pokemonBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, lorcanaBoosters, opDecks, gradedCards, pokemonBoxes, onePieceBoxes } from "@/lib/data";
 
 const categories = [
   { id: "pokemon", name: "Pokémon Cards", href: "/collections/pokemon-boxes", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
@@ -224,12 +224,12 @@ export default function HomePage() {
               <h2 className="section-title">One Piece Booster Boxes &amp; Cases</h2>
               <div className="section-divider" />
             </div>
-            <Link href="/collections/onepiece-booster-box" className="btn-ghost" id="browse-all-onepiece">
+            <Link href="/collections/onepiece-boxes" className="btn-ghost" id="browse-all-onepiece">
               Explore the Full Collection! →
             </Link>
           </div>
           <div className="product-grid">
-            {onePieceBoosterBoxes.map((p) => (
+            {onePieceBoxes.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
