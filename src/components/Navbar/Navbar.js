@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { currencies } from "@/lib/data";
 import CartDrawer from "@/components/CartDrawer/CartDrawer";
 import dynamic from "next/dynamic";
@@ -49,6 +50,7 @@ const navLinks = [
 
 export default function Navbar() {
   const { count, setIsOpen } = useCart();
+  const { currency, changeCurrency } = useCurrency();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -117,7 +119,13 @@ export default function Navbar() {
           <div className="navbar-right">
             {/* Currency Selector */}
             <div className="navbar-currency">
-              <select className="currency-select" aria-label="Select currency" id="currency-selector">
+              <select
+                className="currency-select"
+                aria-label="Select currency"
+                id="currency-selector"
+                value={currency}
+                onChange={(e) => changeCurrency(e.target.value)}
+              >
                 {currencies.map((c, i) => (
                   <option key={`${c.code}-${i}`} value={c.code}>{c.label}</option>
                 ))}

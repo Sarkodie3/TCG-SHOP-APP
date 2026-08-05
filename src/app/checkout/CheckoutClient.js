@@ -1,12 +1,14 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function CheckoutClient() {
   const { items, total, clearItem } = useCart();
+  const { formatPrice } = useCurrency();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
@@ -34,17 +36,17 @@ export default function CheckoutClient() {
     );
   }
 
-  // Format cart contents for the email
+  // Format cart contents for the email (always USD for clarity to admin)
   const cartSummaryText = items
     .map(
       (item) =>
-        `${item.qty}x ${item.name} ${item.variant ? `(${item.variant})` : ""} - $${(
+        `${item.qty}x ${item.name} ${item.variant ? `(${item.variant})` : ""} - ${formatPrice(
           item.price * item.qty
-        ).toFixed(2)}`
+        )}`
     )
     .join("\n");
   
-  const totalText = `$${total.toFixed(2)}`;
+  const totalText = formatPrice(total);
   const orderSummary = `${cartSummaryText}\n\nTOTAL: ${totalText}`;
 
   const handleSubmit = () => {
@@ -160,13 +162,13 @@ export default function CheckoutClient() {
                     )}
                   </div>
                 </div>
-                <p className="checkout-item-price">${(item.price * item.qty).toFixed(2)}</p>
+                <p className="checkout-item-price">{formatPrice(item.price * item.qty)}</p>
               </div>
             ))}
           </div>
           <div className="checkout-total">
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span>{formatPrice(total)}</span>
           </div>
         </div>
       </div>

@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const BULK_QUANTITIES = [1, 5, 10, 15, 20];
 const CASE_QTY = 12;
 
 export default function ProductDetailClient({ product, reviews }) {
   const { addItem } = useCart();
+  const { formatPrice } = useCurrency();
 
   const isBoosterBox = product.subcategory === "booster-box";
   const casePrice = product.casePrice || product.price * CASE_QTY;
@@ -124,12 +126,12 @@ export default function ProductDetailClient({ product, reviews }) {
 
           {/* PRICE */}
           <div className="product-detail-price">
-            ${getDisplayPrice().toFixed(2)}
+            {formatPrice(getDisplayPrice())}
             {isBoosterBox && (
               <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", fontWeight: 400, marginLeft: "0.5rem" }}>
                 {quantityMode === "case"
-                  ? `($${(casePrice / CASE_QTY).toFixed(2)} / BOX)`
-                  : boxQty > 1 ? `($${product.price.toFixed(2)} / BOX)` : ""}
+                  ? `(${formatPrice(casePrice / CASE_QTY)} / BOX)`
+                  : boxQty > 1 ? `(${formatPrice(product.price)} / BOX)` : ""}
               </span>
             )}
           </div>

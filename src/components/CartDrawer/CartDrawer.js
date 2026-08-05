@@ -1,10 +1,12 @@
 "use client";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function CartDrawer() {
   const { items, isOpen, setIsOpen, total, count, removeItem, updateQty, clearItem } = useCart();
+  const { formatPrice } = useCurrency();
   const router = useRouter();
 
   const handleOverlayClick = (e) => {
@@ -125,14 +127,14 @@ export default function CartDrawer() {
 
                       {/* Subtotal for this item */}
                       <p className="cart-item-price" style={{ marginBottom: 0, fontWeight: 700 }}>
-                        ${(item.price * item.qty).toFixed(2)}
+                        {formatPrice(item.price * item.qty)}
                       </p>
                     </div>
 
                     {/* Unit price + remove */}
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "0.25rem" }}>
                       <span style={{ fontSize: "0.72rem", color: "var(--color-text-muted)" }}>
-                        ${item.price.toFixed(2)} each
+                        {formatPrice(item.price)} each
                       </span>
                       <button
                         className="cart-item-remove"
@@ -171,7 +173,7 @@ export default function CartDrawer() {
                     {item.name.length > 30 ? item.name.substring(0, 30) + "…" : item.name}
                     {item.qty > 1 && <span style={{ marginLeft: "0.25rem" }}>×{item.qty}</span>}
                   </span>
-                  <span>${(item.price * item.qty).toFixed(2)}</span>
+                  <span>{formatPrice(item.price * item.qty)}</span>
                 </div>
               ))}
             </div>
@@ -187,7 +189,7 @@ export default function CartDrawer() {
             {/* Grand total */}
             <div className="cart-subtotal" style={{ fontWeight: 700, fontSize: "1rem" }}>
               <span>Grand Total</span>
-              <span style={{ color: "var(--color-accent-primary)" }}>${total.toFixed(2)}</span>
+              <span style={{ color: "var(--color-accent-primary)" }}>{formatPrice(total)}</span>
             </div>
 
             <p style={{ fontSize: "0.72rem", color: "var(--color-text-muted)", textAlign: "center", margin: "0.5rem 0 0.75rem" }}>

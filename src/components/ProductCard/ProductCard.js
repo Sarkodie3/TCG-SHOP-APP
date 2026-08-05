@@ -2,9 +2,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
+  const { formatPrice } = useCurrency();
   const [selectedVariant, setSelectedVariant] = useState(0);
   const [cardQty, setCardQty] = useState(1);
 
@@ -127,7 +129,7 @@ export default function ProductCard({ product }) {
         <div className="product-card-footer">
           <div>
             <span className="product-card-price">
-              ${getPrice().toFixed(2)}
+              {formatPrice(getPrice())}
             </span>
           </div>
 

@@ -3,6 +3,7 @@ import "./responsive.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CartProvider from "@/context/CartContext";
+import CurrencyProvider from "@/context/CurrencyContext";
 import Chatbot from "@/components/Chatbot/Chatbot";
 
 export const metadata = {
@@ -24,12 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <CartProvider>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-          <Chatbot />
-        </CartProvider>
+        <CurrencyProvider>
+          <CartProvider>
+            <Navbar />
+            <main id="main">{children}</main>
+            <Footer />
+            <Chatbot />
+          </CartProvider>
+        </CurrencyProvider>
       </body>
     </html>
   );
