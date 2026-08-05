@@ -1,11 +1,11 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, lorcanaBoosters, opDecks, gradedCards, pokemonBoxes, onePieceBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, etbs, opDecks, gradedCards, pokemonBoxes, onePieceBoxes } from "@/lib/data";
 
 const categories = [
   { id: "pokemon", name: "Pokémon Cards", href: "/collections/pokemon-boxes", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
   { id: "onepiece", name: "One Piece Cards", href: "/collections/onepiece-booster-box", emoji: "⚓", desc: "OP Booster Boxes & Singles" },
-  { id: "lorcana", name: "Disney LORCANA", href: "/collections/lorcana", emoji: "✨", desc: "Booster Boxes & More" },
+  { id: "etbs", name: "ETBs", href: "/collections/etbs", emoji: "⚡", desc: "Elite Trainer Boxes" },
   { id: "grading", name: "PSA Graded Cards", href: "/collections/graded", emoji: "🏆", desc: "PSA 10 Certified Cards" },
 ];
 
@@ -304,20 +304,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== LORCANA BOOSTERS ===== */}
-      <section className="section" aria-label="Lorcana Boosters" style={{ paddingTop: 0 }}>
+      {/* ===== ETBs ===== */}
+      <section className="section" aria-label="ETBs" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-header">
             <div>
-              <h2 className="section-title">Lorcana Booster Boxes</h2>
+              <h2 className="section-title">Elite Trainer Boxes (ETBs)</h2>
               <div className="section-divider" />
             </div>
-            <Link href="/collections/lorcana" className="btn-ghost" id="browse-lorcana">
-              Browse Lorcana! →
+            <Link href="/collections/etbs" className="btn-ghost" id="browse-etbs">
+              Browse ETBs! →
             </Link>
           </div>
           <div className="product-grid">
-            {lorcanaBoosters.map((p) => (
+            {etbs.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>

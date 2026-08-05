@@ -26,7 +26,7 @@ const navLinks = [
       { label: "Booster Boxes & Case", href: "/collections/onepiece-boxes" },
     ],
   },
-  { label: "Disney LORCANA", href: "/disney-lorcana" },
+  { label: "ETBs", href: "/collections/etbs" },
   { label: "Dragon Ball Cards", href: "/dragon-ball" },
   { label: "Grading Cards", href: "/grading" },
   { label: "Customers Review", href: "/customers-review" },

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, pokemonBoxes, onePieceBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, pokemonBoxes, onePieceBoxes, etbs } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const subcategory = (await params).subcategory.replace(/-/g, " ");
@@ -13,12 +13,15 @@ export default async function CollectionPage({ params }) {
   const { subcategory } = await params;
   
   let products = [];
-  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...pokemonBoxes, ...onePieceBoxes];
+  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...pokemonBoxes, ...onePieceBoxes, ...etbs];
   let title = "Collection";
 
   if (subcategory === "all") {
     products = allProducts;
     title = "All Products";
+  } else if (subcategory === "etbs") {
+    products = etbs;
+    title = "Elite Trainer Boxes";
   } else if (subcategory === "pokemon-boxes") {
     products = pokemonBoxes;
     title = "Pokémon Booster Boxes";

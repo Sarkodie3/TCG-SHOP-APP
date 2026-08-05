@@ -2170,3 +2170,5 @@ export const onePieceBoxes = [
     variants: ["1 BOX"]
   },
 ];
+
+export const etbs = [];
