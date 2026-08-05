@@ -16,9 +16,12 @@ const navLinks = [
     label: "Pokémon Cards",
     href: "/pokemon",
     children: [
-      { label: "Booster BOX & CASE", href: "/collections/pokemon-booster-box" },
-      { label: "Single Card/Promo", href: "/collections/pokemon-single" },
-      { label: "Deck BOX/SET", href: "/collections/pokemon-deck" },
+      { label: "Pokémon Boxes", href: "/collections/pokemon-boxes" },
+      { label: "Pokémon Premium Boxes", href: "/collections/pokemon-premium" },
+      { label: "Pokémon Bulk", href: "/collections/pokemon-bulk" },
+      { label: "Pokémon Complete Sets", href: "/collections/pokemon-complete" },
+      { label: "Pokémon PSA", href: "/collections/pokemon-psa" },
+      { label: "Pokémon Promos", href: "/collections/pokemon-promos" },
     ],
   },
   {

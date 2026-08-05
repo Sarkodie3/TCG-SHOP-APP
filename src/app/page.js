@@ -3,7 +3,7 @@ import ProductCard from "@/components/ProductCard/ProductCard";
 import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, lorcanaBoosters, opDecks, gradedCards, pokemonBoxes } from "@/lib/data";
 
 const categories = [
-  { id: "pokemon", name: "Pokémon Cards", href: "/collections/pokemon-booster-box", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
+  { id: "pokemon", name: "Pokémon Cards", href: "/collections/pokemon-boxes", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
   { id: "onepiece", name: "One Piece Cards", href: "/collections/onepiece-booster-box", emoji: "⚓", desc: "OP Booster Boxes & Singles" },
   { id: "lorcana", name: "Disney LORCANA", href: "/collections/lorcana", emoji: "✨", desc: "Booster Boxes & More" },
   { id: "grading", name: "PSA Graded Cards", href: "/collections/graded", emoji: "🏆", desc: "PSA 10 Certified Cards" },
@@ -54,7 +54,7 @@ export default function HomePage() {
               Authentic Japanese Pokémon &amp; ONE PIECE Trading Cards. Booster BOX &amp; Case, Single Cards, Grading Cards, Deck Sets — factory sealed &amp; ready to ship.
             </p>
             <div className="hero-actions">
-              <Link href="/collections/pokemon-booster-box" className="btn btn-primary" id="hero-shop-pokemon">
+              <Link href="/collections/pokemon-boxes" className="btn btn-primary" id="hero-shop-pokemon">
                 Shop Pokémon Cards
               </Link>
               <Link href="/collections/onepiece-booster-box" className="btn btn-secondary" id="hero-shop-onepiece">
@@ -161,7 +161,7 @@ export default function HomePage() {
                 <h2 className="section-title">🆕 New Arrivals</h2>
                 <div className="section-divider" />
               </div>
-              <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-new-arrivals">
+              <Link href="/collections/pokemon-boxes" className="btn-ghost" id="browse-new-arrivals">
                 See All New →
               </Link>
             </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
                 <h2 className="section-title">🔥 Hot Products</h2>
                 <div className="section-divider" />
               </div>
-              <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-hot-products">
+              <Link href="/collections/pokemon-boxes" className="btn-ghost" id="browse-hot-products">
                 See All Hot →
               </Link>
             </div>
@@ -204,7 +204,7 @@ export default function HomePage() {
               <h2 className="section-title">Boost Your Game: Top Booster Boxes &amp; Cases</h2>
               <div className="section-divider" />
             </div>
-            <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-all-pokemon">
+            <Link href="/collections/pokemon-boxes" className="btn-ghost" id="browse-all-pokemon">
               Browse All Your Favorites! →
             </Link>
           </div>
