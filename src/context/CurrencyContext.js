@@ -16,6 +16,7 @@ const EXCHANGE_RATES = {
   INR: 83.95,
   IDR: 16250,
   ILS: 3.70,
+  JPY: 157.50,
   MOP: 8.06,
   MYR: 4.68,
   MXN: 17.15,
@@ -49,6 +50,7 @@ const CURRENCY_SYMBOLS = {
   INR: "₹",
   IDR: "Rp",
   ILS: "₪",
+  JPY: "¥",
   MOP: "P",
   MYR: "RM",
   MXN: "$",
@@ -109,7 +111,7 @@ export default function CurrencyProvider({ children }) {
       const symbol = CURRENCY_SYMBOLS[currency] || currency;
 
       // For currencies with very large values (like VND, IDR, HUF, KRW), show no decimals
-      const noDecimals = ["VND", "IDR", "HUF", "KRW", "INR", "NPR", "CZK", "PHP", "TWD", "THB", "DKK", "NOK", "SEK"].includes(currency);
+      const noDecimals = ["VND", "IDR", "HUF", "KRW", "INR", "NPR", "CZK", "PHP", "TWD", "THB", "DKK", "NOK", "SEK", "JPY"].includes(currency);
 
       if (noDecimals) {
         return `${symbol}${Math.round(converted).toLocaleString()}`;

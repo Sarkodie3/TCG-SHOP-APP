@@ -19,6 +19,7 @@ export const currencies = [
   { code: "IDR", label: "Indonesia (IDR Rp)", symbol: "Rp" },
   { code: "ILS", label: "Israel (ILS ₪)", symbol: "₪" },
   { code: "EUR", label: "Italy (EUR €)", symbol: "€" },
+  { code: "JPY", label: "Japan (JPY ¥)", symbol: "¥" },
   { code: "EUR", label: "Luxembourg (EUR €)", symbol: "€" },
   { code: "MOP", label: "Macao SAR (MOP P)", symbol: "P" },
   { code: "MYR", label: "Malaysia (MYR RM)", symbol: "RM" },
