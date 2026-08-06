@@ -2447,8 +2447,8 @@ export const etbs = [
 
 
 // Auto-generated array for One Piece
-export const onePieceBoxes = [
-  { id: 'onepiece-box-1', name: '3rd Captain Promo', slug: 'onepiece-box-3rdcaptainpromo', category: 'onepiece-boxes', subcategory: 'booster-box', price: 99.99, image: '/images/onepiece/3rd Captain Promo.jpg', badge: '', reviews: 0, brand: 'One Piece', description: '3rd Captain Promo Factory Sealed.', variants: ['1 BOX'] },
+export const onePiecePromoBoxes = [
+  { id: 'onepiece-box-promo-1', name: '3rd Captain Promo', slug: 'onepiece-box-3rdcaptainpromo', category: 'onepiece-boxes', subcategory: 'booster-box', price: 99.99, image: '/images/onepiece/3rd Captain Promo.jpg', badge: '', reviews: 0, brand: 'One Piece', description: '3rd Captain Promo Factory Sealed.', variants: ['1 BOX'] },
 ];
 
 // Auto-generated array for ETB
