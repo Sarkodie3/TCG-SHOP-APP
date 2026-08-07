@@ -1,6 +1,13 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, customerReviews, etbs, opDecks, gradedCards } from "@/lib/data";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE } from "@/lib/seo";
+
+export const metadata = {
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
+  alternates: { canonical: "/" },
+};
 
 const categories = [
   { id: "pokemon", name: "Pokémon Cards", href: "/collections/pokemon-boxes", emoji: "⚡", desc: "Booster Boxes, Singles, Decks" },
@@ -109,7 +116,7 @@ export default function HomePage() {
               <h2 className="section-title">Explore Our Collections</h2>
               <div className="section-divider" />
             </div>
-            <Link href="/collections/pokemon-booster-box" className="btn-ghost" id="browse-all-collections">
+            <Link href="/collections/pokemon-boxes" className="btn-ghost" id="browse-all-collections">
               Browse All →
             </Link>
           </div>
@@ -209,7 +216,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="product-grid">
-            {pokemonBoosterBoxes.map((p) => (
+            {pokemonBoosterBoxes.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -224,12 +231,12 @@ export default function HomePage() {
               <h2 className="section-title">One Piece Booster Boxes &amp; Cases</h2>
               <div className="section-divider" />
             </div>
-            <Link href="/collections/onepiece-boxes" className="btn-ghost" id="browse-all-onepiece">
+            <Link href="/collections/onepiece-booster-box" className="btn-ghost" id="browse-all-onepiece">
               Explore the Full Collection! →
             </Link>
           </div>
           <div className="product-grid">
-            {[...onePieceBoosterBoxes].map((p) => (
+            {[...onePieceBoosterBoxes].slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -257,7 +264,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="product-grid">
-            {singleCards.map((p) => (
+            {singleCards.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -277,7 +284,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="product-grid">
-            {deckSets.map((p) => (
+            {deckSets.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -297,7 +304,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="product-grid">
-            {opDecks.map((p) => (
+            {opDecks.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -317,7 +324,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="product-grid">
-            {etbs.map((p) => (
+            {etbs.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -337,7 +344,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="product-grid">
-            {gradedCards.map((p) => (
+            {gradedCards.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>

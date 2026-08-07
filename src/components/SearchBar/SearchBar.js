@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   pokemonBoosterBoxes, 
   onePieceBoosterBoxes, 
@@ -30,7 +31,7 @@ const allProducts = [
 ];
 
 const quickLinks = [
-  { label: "Pokémon Booster Boxes", href: "/collections/pokemon-booster-box", icon: "⚡" },
+  { label: "Pokémon Booster Boxes", href: "/collections/pokemon-boxes", icon: "⚡" },
   { label: "One Piece Booster Boxes", href: "/collections/onepiece-booster-box", icon: "⚓" },
   { label: "Single Cards", href: "/collections/pokemon-single", icon: "🃏" },
   { label: "Deck Sets", href: "/collections/pokemon-deck", icon: "📦" },
@@ -159,9 +160,9 @@ export default function SearchBar({ onClose }) {
                     onClick={onClose}
                   >
                     {/* Thumbnail */}
-                    <div className="search-result-thumb">
+                    <div className="search-result-thumb" style={{ position: "relative" }}>
                       {p.image ? (
-                        <img src={p.image} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <Image src={p.image} alt={p.name} fill sizes="64px" style={{ objectFit: "cover" }} />
                       ) : (
                         <span style={{ fontSize: "1.6rem" }}>
                           {p.category === "pokemon" ? "⚡" : p.category === "onepiece" ? "⚓" : p.category === "grading" ? "🏆" : "🃏"}

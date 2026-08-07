@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
@@ -64,14 +65,23 @@ export default function ProductDetailClient({ product, reviews }) {
       <div className="product-detail-grid">
         {/* Images */}
         <div className="product-detail-images">
-          <div className="product-main-image" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10rem", overflow: "hidden" }}>
+          <div className="product-main-image" style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10rem", overflow: "hidden" }}>
             {product.image ? (
-              <img src={product.image} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
             ) : emoji}
           </div>
           <div className="product-thumbnails">
-            <div className="product-thumb active" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem", background: "var(--color-bg-elevated)", overflow: "hidden" }}>
-              {product.image ? <img src={product.image} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : emoji}
+            <div className="product-thumb active" style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem", background: "var(--color-bg-elevated)", overflow: "hidden" }}>
+              {product.image ? (
+                <Image src={product.image} alt="" fill sizes="64px" style={{ objectFit: "cover" }} />
+              ) : emoji}
             </div>
             <div className="product-thumb" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem", background: "var(--color-bg-elevated)", opacity: 0.6 }}>
               📦
@@ -110,6 +120,7 @@ export default function ProductDetailClient({ product, reviews }) {
                     key={q}
                     className={`bulk-qty-btn${quantityMode === "box" && boxQty === q ? " active" : ""}`}
                     onClick={() => { setQuantityMode("box"); setBoxQty(q); }}
+                    aria-label={`Select ${q} box${q > 1 ? "es" : ""} of ${product.name}`}
                   >
                     {q}
                   </button>
@@ -118,6 +129,7 @@ export default function ProductDetailClient({ product, reviews }) {
               <button
                 className={`bulk-case-btn${quantityMode === "case" ? " active" : ""}`}
                 onClick={() => setQuantityMode("case")}
+                aria-label={`Select one case of ${product.name}`}
               >
                 Case 【{CASE_QTY}BOX】
               </button>
@@ -159,6 +171,7 @@ export default function ProductDetailClient({ product, reviews }) {
                     key={v}
                     className={`variant-btn ${selectedVariant === v ? "active" : ""}`}
                     onClick={() => setSelectedVariant(v)}
+                    aria-label={`Select ${v} for ${product.name}`}
                   >
                     {v}
                   </button>
@@ -172,6 +185,7 @@ export default function ProductDetailClient({ product, reviews }) {
              <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text-secondary)" }}>Quantity:</span>
              <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", width: "fit-content", overflow: "hidden", background: "var(--color-bg-elevated)" }}>
                 <button 
+                  aria-label={`Decrease quantity of ${product.name}`}
                   onClick={() => {
                     if (isBoosterBox && quantityMode === "case") {
                        // Switch back to box mode if they tweak quantity
@@ -189,6 +203,7 @@ export default function ProductDetailClient({ product, reviews }) {
                   {isBoosterBox && quantityMode === "case" ? CASE_QTY : boxQty}
                 </span>
                 <button 
+                  aria-label={`Increase quantity of ${product.name}`}
                   onClick={() => {
                     if (isBoosterBox && quantityMode === "case") {
                        setQuantityMode("box");
@@ -205,7 +220,7 @@ export default function ProductDetailClient({ product, reviews }) {
           </div>
 
           {/* ADD TO CART */}
-          <button className="product-add-btn" onClick={handleAddToCart} id="add-to-cart-detail">
+          <button className="product-add-btn" onClick={handleAddToCart} id="add-to-cart-detail" aria-label={`Add ${product.name} to cart`}>
             🛒 Add to Cart — {getDisplayLabel() || selectedVariant || ""}
           </button>
 
@@ -256,7 +271,7 @@ export default function ProductDetailClient({ product, reviews }) {
             <div className="review-modal">
               <div className="review-modal-header">
                 <h3>Write a Review</h3>
-                <button className="review-modal-close" onClick={() => setShowReviewForm(false)}>✕</button>
+                <button className="review-modal-close" onClick={() => setShowReviewForm(false)} aria-label="Close review form">✕</button>
               </div>
               <form onSubmit={handleReviewSubmit} className="review-form">
                 <div className="review-form-field">
@@ -278,6 +293,7 @@ export default function ProductDetailClient({ product, reviews }) {
                         key={star}
                         className={`star-pick${reviewForm.rating >= star ? " selected" : ""}`}
                         onClick={() => setReviewForm({ ...reviewForm, rating: star })}
+                        aria-label={`Rate ${star} out of 5 stars`}
                       >
                         ★
                       </button>

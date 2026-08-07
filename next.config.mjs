@@ -19,6 +19,26 @@ const nextConfig = {
         pathname: "/s/files/**",
       },
     ],
+    formats: ["image/avif", "image/webp"],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/collections/pokemon-booster-box",
+        destination: "/collections/pokemon-boxes",
+        permanent: true,
+      },
+      {
+        source: "/collections/onepiece-boxes",
+        destination: "/collections/onepiece-booster-box",
+        permanent: true,
+      },
+      {
+        source: "/yugioh",
+        destination: "/yughi-oh",
+        permanent: true,
+      },
+    ];
   },
 };
 

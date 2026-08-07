@@ -3,6 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Returns and Refunds Policy | KAGAMI",
   description: "Our returns and refunds policy for KAGAMI Japanese Trading Card Game Store.",
+  alternates: { canonical: "/refund-policy" },
 };
 
 export default function RefundPolicyPage() {

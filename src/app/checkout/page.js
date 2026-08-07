@@ -1,8 +1,12 @@
 import CheckoutClient from "./CheckoutClient";
 
 export const metadata = {
-  title: "Checkout - KAGAMI",
-  description: "Secure checkout for KAGAMI",
+  title: "Checkout | KAGAMI",
+  description: "Secure checkout for KAGAMI.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function CheckoutPage() {

@@ -3,6 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Shipping Policy | KAGAMI",
   description: "Clear shipping policy for KAGAMI. Orders shipped within 2–5 business days from Japan.",
+  alternates: { canonical: "/shipping-policy" },
 };
 
 export default function ShippingPolicyPage() {

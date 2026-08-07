@@ -4,6 +4,7 @@ import WholesaleForm from "./WholesaleForm";
 export const metadata = {
   title: "Wholesale Trading Cards | KAGAMI Japan B2B Inquiries",
   description: "Looking for Japanese trading cards in bulk? KAGAMI offers wholesale deals with flexible pricing, secure shipping, and fast response for global buyers.",
+  alternates: { canonical: "/wholesale" },
 };
 
 export default function WholesalePage() {
