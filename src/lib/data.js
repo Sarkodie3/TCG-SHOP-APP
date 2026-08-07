@@ -668,7 +668,7 @@ export const pokemonBoosterBoxes = [
     slug: "mega-symphonia-m1s-tcg-box",
     category: "pokemon",
     subcategory: "booster-box",
-    price: 113.00,
+    price: 62.65,
     casePrice: null,
     image: '/images/pokemon/Mega Symphonia (M1S).jpg',
     badge: null,
