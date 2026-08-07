@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
@@ -42,10 +43,12 @@ export default function ProductCard({ product }) {
       <Link href={`/products/${product.slug}`} aria-label={product.name}>
         <div className="product-card-img-wrap">
           {product.image ? (
-            <img
+            <Image
               src={product.image}
               alt={product.name}
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+              fill
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 320px"
+              style={{ objectFit: "cover" }}
             />
           ) : (
             <div
@@ -108,6 +111,7 @@ export default function ProductCard({ product }) {
                  key={i}
                  className={`variant-btn${selectedVariant === i ? " active" : ""}`}
                  onClick={() => setSelectedVariant(i)}
+                 aria-label={`Select ${v} for ${product.name}`}
                >
                  {v}
                </button>
@@ -119,9 +123,9 @@ export default function ProductCard({ product }) {
                Buy in Bulk and Save per BOX!!: <span style={{color: "var(--color-accent-primary)"}}>{cardQty} BOX{cardQty > 1 ? "ES" : ""}</span>
              </div>
              <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)", width: "fit-content", overflow: "hidden" }}>
-                <button onClick={() => handleQtyChange(-1)} style={{ padding: "0.25rem 0.5rem", background: "var(--color-bg-elevated)", border: "none", color: "var(--color-text-primary)", cursor: "pointer" }}>-</button>
+                <button onClick={() => handleQtyChange(-1)} aria-label={`Decrease quantity of ${product.name}`} style={{ padding: "0.25rem 0.5rem", background: "var(--color-bg-elevated)", border: "none", color: "var(--color-text-primary)", cursor: "pointer" }}>-</button>
                 <span style={{ padding: "0 0.75rem", fontSize: "0.85rem", fontWeight: 600 }}>{cardQty}</span>
-                <button onClick={() => handleQtyChange(1)} style={{ padding: "0.25rem 0.5rem", background: "var(--color-bg-elevated)", border: "none", color: "var(--color-text-primary)", cursor: "pointer" }}>+</button>
+                <button onClick={() => handleQtyChange(1)} aria-label={`Increase quantity of ${product.name}`} style={{ padding: "0.25rem 0.5rem", background: "var(--color-bg-elevated)", border: "none", color: "var(--color-text-primary)", cursor: "pointer" }}>+</button>
              </div>
           </div>
         ) : null}

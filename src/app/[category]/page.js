@@ -1,11 +1,41 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles } from "@/lib/data";
+import { absoluteUrl, breadcrumbJsonLd, categoryMeta, SITE_NAME, truncate } from "@/lib/seo";
+
+const categorySlugs = Object.keys(categoryMeta);
+
+function getCategoryMeta(category) {
+  return (
+    categoryMeta[category] || {
+      title: `${category.replace(/-/g, " ")} | ${SITE_NAME}`,
+      description: `Browse ${category.replace(/-/g, " ")} trading card products from KAGAMI.`,
+      name: category.replace(/-/g, " "),
+    }
+  );
+}
+
+export function generateStaticParams() {
+  return categorySlugs.map((category) => ({ category }));
+}
 
 export async function generateMetadata({ params }) {
-  const categoryStr = (await params).category.replace("-", " ");
+  const category = (await params).category;
+  const meta = getCategoryMeta(category);
+  const path = `/${category}`;
+
   return {
-    title: `${categoryStr.charAt(0).toUpperCase() + categoryStr.slice(1)} | Omotenashi TCG`,
+    title: meta.title,
+    description: truncate(meta.description),
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      title: meta.title,
+      description: truncate(meta.description),
+      type: "website",
+      url: absoluteUrl(path),
+    },
   };
 }
 
@@ -13,44 +43,40 @@ export default async function CategoryPage({ params }) {
   const { category } = await params;
 
   let products = [];
-  let title = "";
-  let desc = "";
+  const meta = getCategoryMeta(category);
+  let title = meta.name;
+  let desc = meta.description;
 
-  // Mock filtering based on category
   if (category === "pokemon") {
-    title = "Pokémon Cards";
-    desc = "Explore our vast collection of authentic Japanese Pokémon cards. From Booster Boxes to rare Singles.";
     products = [...pokemonBoosterBoxes, ...singleCards.filter(p => p.category === "pokemon"), ...deckSets];
   } else if (category === "one-piece") {
-    title = "One Piece Cards";
-    desc = "Discover the world of One Piece TCG. Find the latest Booster Boxes and Singles.";
     products = [...onePieceBoosterBoxes, ...singleCards.filter(p => p.category === "onepiece")];
   } else if (category === "disney-lorcana") {
     title = "Disney LORCANA";
     desc = "Immerse yourself in the magic of Disney LORCANA.";
-    products = []; // Add mock data if needed
+    products = [];
   } else if (category === "dragon-ball") {
-    title = "Dragon Ball Cards";
-    desc = "Power up your deck with Dragon Ball Super Card Game Fusion World.";
     products = dragonBallBoxes;
   } else if (category === "yughi-oh" || category === "yugioh") {
-    title = "Yughi-oh Cards";
-    desc = "Discover iconic Yu-Gi-Oh! booster boxes, decks, and collectible cards.";
     products = yugiohBoxes;
   } else if (category === "booster-bundles") {
-    title = "Booster Bundles";
-    desc = "Shop authentic TCG Booster Bundles. Perfect for building your collection.";
     products = boosterBundles;
   } else if (category === "grading") {
-    title = "Grading Cards";
-    desc = "Professional grading services for your most valuable cards.";
     products = gradingCards;
   } else {
     title = "Not Found";
+    desc = "No products found in this category right now.";
   }
+
+  const path = `/${category}`;
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: title, path },
+  ]);
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <section className="page-hero">
         <div className="container page-hero-content">
           <nav className="breadcrumb" aria-label="Breadcrumb">

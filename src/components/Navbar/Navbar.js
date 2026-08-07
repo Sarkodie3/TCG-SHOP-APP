@@ -23,7 +23,7 @@ const navLinks = [
     label: "One Piece Cards",
     href: "/one-piece",
     children: [
-      { label: "Booster Boxes & Case", href: "/collections/onepiece-boxes" },
+      { label: "Booster Boxes & Case", href: "/collections/onepiece-booster-box" },
     ],
   },
   { label: "ETBs", href: "/collections/etbs" },
@@ -88,10 +88,10 @@ export default function Navbar() {
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.label} className="nav-item">
-                  <span className="nav-link" tabIndex={0} aria-haspopup="true">
+                  <button className="nav-link" type="button" aria-haspopup="true" aria-expanded="false">
                     {link.label}
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg>
-                  </span>
+                  </button>
                   <div className="nav-dropdown" role="menu">
                     {link.children.map((child) => (
                       <Link key={child.href} href={child.href} className="nav-dropdown-link" role="menuitem" onClick={() => setMobileOpen(false)}>

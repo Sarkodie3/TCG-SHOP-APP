@@ -3,6 +3,7 @@ import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CartDrawer() {
   const { items, isOpen, setIsOpen, total, count, removeItem, updateQty, clearItem } = useCart();
@@ -73,6 +74,7 @@ export default function CartDrawer() {
                   <div
                     className="cart-item-img"
                     style={{
+                      position: "relative",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -82,10 +84,12 @@ export default function CartDrawer() {
                     }}
                   >
                     {item.image ? (
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.name}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        fill
+                        sizes="72px"
+                        style={{ objectFit: "cover" }}
                       />
                     ) : (
                       "🃏"

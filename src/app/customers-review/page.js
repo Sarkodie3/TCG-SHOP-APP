@@ -4,6 +4,7 @@ import { customerReviews } from "@/lib/data";
 export const metadata = {
   title: "KAGAMI Reviews | KAGAMI | Japanese TCG Store Official Store",
   description: "Explore KAGAMI Reviews. Discover our wide range of TCG products and enjoy secure global shipping.",
+  alternates: { canonical: "/customers-review" },
 };
 
 function StarRating({ count = 5 }) {
