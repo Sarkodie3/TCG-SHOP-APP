@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, etbs } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, gradedCards, opDecks, etbs, dragonBallBoxes, yugiohBoxes, boosterBundles } from "@/lib/data";
 import { absoluteUrl, breadcrumbJsonLd, collectionMeta, SITE_NAME, truncate } from "@/lib/seo";
 
 const collectionSlugs = Object.keys(collectionMeta);
@@ -51,7 +51,7 @@ export default async function CollectionPage({ params }) {
   const { subcategory } = await params;
   
   let products = [];
-  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...etbs];
+  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...gradedCards, ...opDecks, ...etbs, ...dragonBallBoxes, ...yugiohBoxes, ...boosterBundles];
   const meta = getCollectionMeta(subcategory);
   let title = meta.name;
   let desc = meta.description;
@@ -71,7 +71,9 @@ export default async function CollectionPage({ params }) {
   } else if (subcategory === "pokemon-deck") {
     products = deckSets.filter(p => p.category === "pokemon");
   } else if (subcategory === "onepiece-deck") {
-    products = deckSets.filter(p => p.category === "onepiece");
+    products = opDecks;
+  } else if (subcategory === "graded") {
+    products = gradedCards;
   } else {
     products = allProducts.filter(p => p.subcategory === subcategory);
   }
