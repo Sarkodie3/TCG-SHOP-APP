@@ -1367,6 +1367,34 @@ export const pokemonBoosterBoxes = [
     brand: "Pokemon",
     description: "Special Deck Set ex Japanese Factory Sealed.",
     variants: ["1 BOX"]
+  },
+  {
+    id: "tcg-pk-30th",
+    name: "30th",
+    slug: "30th-tcg-box",
+    category: "pokemon",
+    subcategory: "booster-box",
+    price: 225.54,
+    image: '/images/pokemon/30th.jpg',
+    badge: "",
+    reviews: 0,
+    brand: "Pokemon",
+    description: "30th Anniversary Japanese Factory Sealed.",
+    variants: ["1 BOX"]
+  },
+  {
+    id: "tcg-pk-inferno-x",
+    name: "Inferno X (M2)",
+    slug: "inferno-x-m2-tcg-box",
+    category: "pokemon",
+    subcategory: "booster-box",
+    price: 115.29,
+    image: '/images/pokemon/Inferno X (M2).jpg',
+    badge: "",
+    reviews: 0,
+    brand: "Pokemon",
+    description: "Inferno X (M2) Japanese Factory Sealed.",
+    variants: ["1 BOX"]
   }
 ];
 
