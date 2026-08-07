@@ -26,7 +26,6 @@ const allProducts = [
   ...gradedCards,
   ...lorcanaBoosters,
   ...opDecks,
-  ...pokemonBoxes,
   ...etbs,
   ...dragonBallBoxes,
   ...yugiohBoxes,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles, pokemonBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const categoryStr = (await params).category.replace("-", " ");
@@ -20,7 +20,7 @@ export default async function CategoryPage({ params }) {
   if (category === "pokemon") {
     title = "Pokémon Cards";
     desc = "Explore our vast collection of authentic Japanese Pokémon cards. From Booster Boxes to rare Singles.";
-    products = [...pokemonBoosterBoxes, ...pokemonBoxes, ...singleCards.filter(p => p.category === "pokemon"), ...deckSets];
+    products = [...pokemonBoosterBoxes, ...singleCards.filter(p => p.category === "pokemon"), ...deckSets];
   } else if (category === "one-piece") {
     title = "One Piece Cards";
     desc = "Discover the world of One Piece TCG. Find the latest Booster Boxes and Singles.";

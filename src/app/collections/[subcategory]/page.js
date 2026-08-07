@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, pokemonBoxes, etbs } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, etbs } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const subcategory = (await params).subcategory.replace(/-/g, " ");
@@ -23,7 +23,7 @@ export default async function CollectionPage({ params }) {
     products = etbs;
     title = "Elite Trainer Boxes";
   } else if (subcategory === "pokemon-boxes" || subcategory === "pokemon-booster-box") {
-    products = [...pokemonBoosterBoxes, ...pokemonBoxes];
+    products = [...pokemonBoosterBoxes];
     title = "Pokémon Booster Boxes & Cases";
   } else if (subcategory === "onepiece-boxes" || subcategory === "onepiece-booster-box") {
     products = [...onePieceBoosterBoxes];

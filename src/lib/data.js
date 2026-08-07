@@ -84,7 +84,7 @@ export const onePieceBoosterBoxes = [
     description: "The latest One Piece TCG set featuring the World's Strongest Warriors with powerful new cards. Factory sealed for guaranteed authenticity.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-16",
     name: "【OP-16】The Time Of Battle TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-16-time-of-battle-tcg-box-case",
@@ -99,7 +99,7 @@ export const onePieceBoosterBoxes = [
     description: "The Time of Battle features epic clashes and iconic moments from the One Piece anime.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-15",
     name: "【OP-15】Adventure on the Island of the Gods TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-15-adventure-island-gods-tcg-box-case",
@@ -114,7 +114,7 @@ export const onePieceBoosterBoxes = [
     description: "Adventure on the Island of the Gods brings the Egghead arc to life with stunning cards.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-eb-04",
     name: "【EB-04】Extra Booster EGGHEAD CRISIS TCG BOX & CASE〔Factory Sealed〕",
     slug: "eb-04-extra-booster-egghead-crisis-tcg-box-case",
@@ -129,7 +129,7 @@ export const onePieceBoosterBoxes = [
     description: "Extra Booster set themed around the Egghead Crisis arc with exclusive cards.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-14",
     name: "【OP-14】The Azure Sea's Seven TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-14-azure-seas-seven-tcg-box-case",
@@ -144,7 +144,7 @@ export const onePieceBoosterBoxes = [
     description: "Features the Shichibukai — Seven Warlords of the Sea with powerful leader cards.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-13",
     name: "【OP-13】Ultra Deck: The Three Captains TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-13-ultra-deck-three-captains-tcg-box-case",
@@ -159,7 +159,7 @@ export const onePieceBoosterBoxes = [
     description: "Ultra Deck featuring The Three Captains with premium cards and exclusive artwork.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-12",
     name: "【OP-12】Side Story of Vivi TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-12-side-story-of-vivi-tcg-box-case",
@@ -174,7 +174,7 @@ export const onePieceBoosterBoxes = [
     description: "Side story set focusing on Vivi's journey with unique character cards.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-11",
     name: "【OP-11】A Fist of Divine Speed TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-11-fist-divine-speed-tcg-box-case",
@@ -189,7 +189,7 @@ export const onePieceBoosterBoxes = [
     description: "A Fist of Divine Speed brings lightning-fast combat to the One Piece TCG.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-10",
     name: "【OP-10】Royal Knight TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-10-royal-knight-tcg-box-case",
@@ -204,7 +204,7 @@ export const onePieceBoosterBoxes = [
     description: "Royal Knight features the noble warriors of the One Piece world.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-09",
     name: "【OP-09】Emperors in the New World TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-09-emperors-new-world-tcg-box-case",
@@ -219,7 +219,7 @@ export const onePieceBoosterBoxes = [
     description: "Emperors in the New World showcases the most powerful rulers of the seas.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-08",
     name: "【OP-08】Two Legends TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-08-two-legends-tcg-box-case",
@@ -234,7 +234,7 @@ export const onePieceBoosterBoxes = [
     description: "Two Legends brings the iconic duels of One Piece's greatest heroes together.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-07",
     name: "【OP-07】500 Years in the Future TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-07-500-years-future-tcg-box-case",
@@ -249,7 +249,7 @@ export const onePieceBoosterBoxes = [
     description: "500 Years in the Future explores the ancient mysteries of the One Piece world.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-06",
     name: "【OP-06】Wings of the Captain TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-06-wings-of-captain-tcg-box-case",
@@ -264,7 +264,7 @@ export const onePieceBoosterBoxes = [
     description: "Wings of the Captain features the trusted crew members of the Straw Hat Pirates.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-05",
     name: "【OP-05】Awakening of the New Era TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-05-awakening-new-era-tcg-box-case",
@@ -279,7 +279,7 @@ export const onePieceBoosterBoxes = [
     description: "Awakening of the New Era marks a turning point in the One Piece TCG journey.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-04",
     name: "【OP-04】Kingdoms of Intrigue TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-04-kingdoms-of-intrigue-tcg-box-case",
@@ -294,7 +294,7 @@ export const onePieceBoosterBoxes = [
     description: "Kingdoms of Intrigue brings political drama and powerful nation leaders to your deck.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-03",
     name: "【OP-03】Pillars of Strength TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-03-pillars-of-strength-tcg-box-case",
@@ -309,7 +309,7 @@ export const onePieceBoosterBoxes = [
     description: "Pillars of Strength features the most powerful fighters from across the One Piece world.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-02",
     name: "【OP-02】Paramount War TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-02-paramount-war-tcg-box-case",
@@ -324,7 +324,7 @@ export const onePieceBoosterBoxes = [
     description: "Paramount War recreates the legendary Marineford war with iconic cards.",
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
-  {
+{
     id: "tcg-op-01",
     name: "【OP-01】Romance Dawn TCG BOX & CASE〔Factory Sealed〕",
     slug: "op-01-romance-dawn-tcg-box-case",
@@ -340,62 +340,6 @@ export const onePieceBoosterBoxes = [
     variants: ["1 BOX", "1 CASE (6 BOX)"],
   },
 {
-    id: "op-box-1",
-    name: "OP-16",
-    slug: "op-box-op-16",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 72.05,
-    image: '/images/onepiece/OP-16.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-16 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-2",
-    name: "OP-15",
-    slug: "op-box-op-15",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 81.44,
-    image: '/images/onepiece/OP-15.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-15 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-3",
-    name: "EB-04",
-    slug: "op-box-eb-04",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 67.66,
-    image: '/images/onepiece/EB-04.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "EB-04 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-4",
-    name: "OP-14",
-    slug: "op-box-op-14",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 80.19,
-    image: '/images/onepiece/OP-14.jpg',
-    badge: "sold-out",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-14 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
     id: "op-box-5",
     name: "EB-03",
     slug: "op-box-eb-03",
@@ -407,20 +351,6 @@ export const onePieceBoosterBoxes = [
     reviews: 0,
     brand: "One Piece",
     description: "EB-03 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-6",
-    name: "OP-13",
-    slug: "op-box-op-13",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 117.15,
-    image: '/images/onepiece/OP-13.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-13 Japanese Factory Sealed.",
     variants: ["1 BOX"]
   },
 {
@@ -438,34 +368,6 @@ export const onePieceBoosterBoxes = [
     variants: ["1 BOX"]
   },
 {
-    id: "op-box-8",
-    name: "OP-12",
-    slug: "op-box-op-12",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 87.71,
-    image: '/images/onepiece/OP-12.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-12 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-9",
-    name: "OP-11",
-    slug: "op-box-op-11",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 197.34,
-    image: '/images/onepiece/OP-11.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-11 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
     id: "op-box-10",
     name: "EB-02",
     slug: "op-box-eb-02",
@@ -477,34 +379,6 @@ export const onePieceBoosterBoxes = [
     reviews: 0,
     brand: "One Piece",
     description: "EB-02 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-11",
-    name: "OP-10",
-    slug: "op-box-op-10",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 63.28,
-    image: '/images/onepiece/OP-10.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-10 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-12",
-    name: "OP-09",
-    slug: "op-box-op-09",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 112.77,
-    image: '/images/onepiece/OP-09.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-09 Japanese Factory Sealed.",
     variants: ["1 BOX"]
   },
 {
@@ -522,34 +396,6 @@ export const onePieceBoosterBoxes = [
     variants: ["1 BOX"]
   },
 {
-    id: "op-box-14",
-    name: "OP-08",
-    slug: "op-box-op-08",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 62.65,
-    image: '/images/onepiece/OP-08.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-08 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-15",
-    name: "OP-07",
-    slug: "op-box-op-07",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 85.20,
-    image: '/images/onepiece/OP-07.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-07 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
     id: "op-box-16",
     name: "EB-01",
     slug: "op-box-eb-01",
@@ -561,90 +407,6 @@ export const onePieceBoosterBoxes = [
     reviews: 0,
     brand: "One Piece",
     description: "EB-01 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-17",
-    name: "OP-06",
-    slug: "op-box-op-06",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 117.78,
-    image: '/images/onepiece/OP-06.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-06 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-18",
-    name: "OP-05",
-    slug: "op-box-op-05",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 339.56,
-    image: '/images/onepiece/OP-05.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-05 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-  {
-    id: "op-box-auto-op04",
-    name: "OP-04",
-    slug: "op-box-op-04",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 99.99,
-    image: '/images/onepiece/OP-04.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-04 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-  {
-    id: "op-box-auto-op03",
-    name: "OP-03",
-    slug: "op-box-op-03",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 99.99,
-    image: '/images/onepiece/OP-03.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-03 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-  {
-    id: "op-box-auto-op02",
-    name: "OP-02",
-    slug: "op-box-op-02",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 99.99,
-    image: '/images/onepiece/OP-02.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-02 Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-  {
-    id: "op-box-auto-op01",
-    name: "OP-01",
-    slug: "op-box-op-01",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 99.99,
-    image: '/images/onepiece/OP-01.jpg',
-    badge: "",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-01 Japanese Factory Sealed.",
     variants: ["1 BOX"]
   },
 {
@@ -771,20 +533,6 @@ export const onePieceBoosterBoxes = [
     reviews: 0,
     brand: "One Piece",
     description: "Base shop Japanese Factory Sealed.",
-    variants: ["1 BOX"]
-  },
-{
-    id: "op-box-28",
-    name: "OP-17",
-    slug: "op-box-op-17",
-    category: "onepiece",
-    subcategory: "booster-box",
-    price: 112.77,
-    image: '/images/onepiece/OP-17.jpg',
-    badge: "pre-order",
-    reviews: 0,
-    brand: "One Piece",
-    description: "OP-17 Japanese Factory Sealed.",
     variants: ["1 BOX"]
   }
 ];
@@ -1559,21 +1307,11 @@ export const pokemonBoosterBoxes = [
     description: "Experience the thrill of Pokémon with the highly sought-after Jet-Black Spirit (s6k) box. Contains multiple booster packs inside.",
     variants: ["1 BOX"],
   },
-{
-    id: "tcg-pk-sv-152",
-    name: "Fusion Arts (s8)",
-    slug: "fusion-arts-s8-tcg-box",
-    category: "pokemon",
-    subcategory: "booster-box",
-    price: 144.09,
-    casePrice: null,
-    image: '/images/pokemon/Fusion Arts (s8).jpg',
-    badge: null,
-    reviews: Math.floor(Math.random() * 20),
-    brand: "KAGAMI",
-    description: "Experience the thrill of Pokémon with the highly sought-after Fusion Arts (s8) box. Contains multiple booster packs inside.",
-    variants: ["1 BOX"],
-  }
+{ id: 'pokemon-box-13', name: 'Fukuoka BOX', slug: 'pokemon-box-fukuoka-box', category: 'pokemon-boxes', subcategory: 'booster-box', price: 145.35, image: '/images/pokemon/Fukuoka Box.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Fukuoka BOX Japanese Factory Sealed.', variants: ['1 BOX'] },
+{ id: 'pokemon-box-14', name: 'Black Volt Deluxe(SV11B)', slug: 'pokemon-box-black-volt-deluxe-sv11b', category: 'pokemon-boxes', subcategory: 'booster-box', price: 120.29, image: '/images/pokemon/Black Volt Deleuxe (SV11B).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Black Volt Deluxe(SV11B) Japanese Factory Sealed.', variants: ['1 BOX'] },
+{ id: 'pokemon-box-18', name: 'Team Rocket Attach� Case', slug: 'pokemon-box-team-rocket-attach-case', category: 'pokemon-boxes', subcategory: 'booster-box', price: 144.09, image: '/images/pokemon/Team Rocket Attaché Case.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Team Rocket Attach� Case Japanese Factory Sealed.', variants: ['1 BOX'] },
+{ id: 'pokemon-box-54', name: 'Fusion Arts (s8)', slug: 'pokemon-box-fusion-arts-s8', category: 'pokemon-boxes', subcategory: 'booster-box', price: 110.26, image: '/images/pokemon/Fusion Arts (s8).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Fusion Arts (s8) Japanese Factory Sealed.', variants: ['1 BOX'] },
+{ id: 'pokemon-box-55', name: 'Star Vers (s9)', slug: 'pokemon-box-star-vers-s9', category: 'pokemon-boxes', subcategory: 'booster-box', price: 88.33, image: '/images/pokemon/Star Vers (s9).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Star Vers (s9) Japanese Factory Sealed.', variants: ['1 BOX'] }
 ];
 
 
@@ -2432,64 +2170,7 @@ export const opDecks = [
 // =============================================
 // PRODUCTS � Pokemon Boxes
 // =============================================
-export const pokemonBoxes = [
-{ id: 'pokemon-box-1', name: 'Storm Emerard (M6)', slug: 'pokemon-box-storm-emerard-m6', category: 'pokemon-boxes', subcategory: 'booster-box', price: 56.38, image: '/images/pokemon/Storm Emarard (M6).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Storm Emerard (M6) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-2', name: 'Abyss Eye (M5)', slug: 'pokemon-box-abyss-eye-m5', category: 'pokemon-boxes', subcategory: 'booster-box', price: 57.64, image: '/images/pokemon/Abyss Eye (M5).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Abyss Eye (M5) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-3', name: 'Ninja Spinner (M4)', slug: 'pokemon-box-ninja-spinner-m4', category: 'pokemon-boxes', subcategory: 'booster-box', price: 50.12, image: '/images/pokemon/ninja Spinner (M4).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Ninja Spinner (M4) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-4', name: 'Nihil Zero(M3)', slug: 'pokemon-box-nihil-zero-m3', category: 'pokemon-boxes', subcategory: 'booster-box', price: 78.94, image: '/images/pokemon/Nihil Zero (M3).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Nihil Zero(M3) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-5', name: 'Mega Dream ex(M2a)', slug: 'pokemon-box-mega-dream-ex-m2a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 16.29, image: '/images/pokemon/Mega dream ex (M2a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Mega Dream ex(M2a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-6', name: 'Start Deck 100 Battle Collection', slug: 'pokemon-box-start-deck-100-battle-collection', category: 'pokemon-boxes', subcategory: 'booster-box', price: 120.29, image: '/images/pokemon/Start Deck 100 Battle Collection.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Start Deck 100 Battle Collection Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-7', name: 'Gengar Starter Set', slug: 'pokemon-box-gengar-starter-set', category: 'pokemon-boxes', subcategory: 'booster-box', price: 65.15, image: '/images/pokemon/Gender Starter set.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Gengar Starter Set Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-8', name: 'Mega Brave(M1L)', slug: 'pokemon-box-mega-brave-m1l', category: 'pokemon-boxes', subcategory: 'booster-box', price: 62.65, image: '/images/pokemon/Mega Brave (M1L).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Mega Brave(M1L) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-9', name: 'Pokemon Center Mega Blave', slug: 'pokemon-box-pokemon-center-mega-blave', category: 'pokemon-boxes', subcategory: 'booster-box', price: 119.03, image: '/images/pokemon/Pokemon Center mega Blave.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Pokemon Center Mega Blave Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-10', name: 'Mega Trainer BOX', slug: 'pokemon-box-mega-trainer-box', category: 'pokemon-boxes', subcategory: 'booster-box', price: 90.21, image: '/images/pokemon/Mega Trainer Box.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Mega Trainer BOX Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-11', name: 'Tohoku BOX', slug: 'pokemon-box-tohoku-box', category: 'pokemon-boxes', subcategory: 'booster-box', price: 115.27, image: '/images/pokemon/Tohoku Box.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Tohoku BOX Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-12', name: 'Hiroshima BOX', slug: 'pokemon-box-hiroshima-box', category: 'pokemon-boxes', subcategory: 'booster-box', price: 96.48, image: '/images/pokemon/Hiroshima Box.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Hiroshima BOX Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-13', name: 'Fukuoka BOX', slug: 'pokemon-box-fukuoka-box', category: 'pokemon-boxes', subcategory: 'booster-box', price: 145.35, image: '/images/pokemon/Fukuoka Box.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Fukuoka BOX Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-14', name: 'Black Volt Deluxe(SV11B)', slug: 'pokemon-box-black-volt-deluxe-sv11b', category: 'pokemon-boxes', subcategory: 'booster-box', price: 120.29, image: '/images/pokemon/Black Volt Deleuxe (SV11B).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Black Volt Deluxe(SV11B) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-15', name: 'White Flare Deluxe(SV11W)', slug: 'pokemon-box-white-flare-deluxe-sv11w', category: 'pokemon-boxes', subcategory: 'booster-box', price: 132.82, image: '/images/pokemon/White Flare Deluxe(SV11W).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'White Flare Deluxe(SV11W) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-16', name: 'Black Bolt(SV11B)', slug: 'pokemon-box-black-bolt-sv11b', category: 'pokemon-boxes', subcategory: 'booster-box', price: 116.53, image: '/images/pokemon/Black Bolt(SV11B).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Black Bolt(SV11B) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-17', name: 'White Flare(SV11W)', slug: 'pokemon-box-white-flare-sv11w', category: 'pokemon-boxes', subcategory: 'booster-box', price: 169.15, image: '/images/pokemon/White Flare (SV11W).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'White Flare(SV11W) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-18', name: 'Team Rocket Attach� Case', slug: 'pokemon-box-team-rocket-attach-case', category: 'pokemon-boxes', subcategory: 'booster-box', price: 144.09, image: '/images/pokemon/Team Rocket Attaché Case.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Team Rocket Attach� Case Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-19', name: 'Glory of Team Rocket(Sv10)', slug: 'pokemon-box-glory-of-team-rocket-sv10', category: 'pokemon-boxes', subcategory: 'booster-box', price: 104.00, image: '/images/pokemon/Glory of Team Rocket(Sv10).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Glory of Team Rocket(Sv10) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-20', name: 'Heat Wave Arena(SV9a)', slug: 'pokemon-box-heat-wave-arena-sv9a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 70.17, image: '/images/pokemon/Heat Wave Arena(SV9a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Heat Wave Arena(SV9a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-21', name: 'Battle Partners(SV9)', slug: 'pokemon-box-battle-partners-sv9', category: 'pokemon-boxes', subcategory: 'booster-box', price: 101.49, image: '/images/pokemon/Battle Partners(SV9).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Battle Partners(SV9) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-22', name: 'Terastal Festa(SV8a)', slug: 'pokemon-box-terastal-festa-sv8a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 181.68, image: '/images/pokemon/Terastal Festa(SV8a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Terastal Festa(SV8a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-23', name: 'Super Electric Breaker(SV8)', slug: 'pokemon-box-super-electric-breaker-sv8', category: 'pokemon-boxes', subcategory: 'booster-box', price: 83.95, image: '/images/pokemon/Super Electric Breaker（SV8).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Super Electric Breaker(SV8) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-24', name: 'Paradise Dragona(SV7a)', slug: 'pokemon-box-paradise-dragona-sv7a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 62.65, image: '/images/pokemon/Paradise Ⅾragona（SV7a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Paradise Dragona(SV7a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-25', name: 'Stella Miracle(SV7)', slug: 'pokemon-box-stella-miracle-sv7', category: 'pokemon-boxes', subcategory: 'booster-box', price: 62.02, image: '/images/pokemon/Stella Miracle （SV7）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Stella Miracle(SV7) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-26', name: 'Night wanderer (SV6a)', slug: 'pokemon-box-night-wanderer-sv6a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 77.06, image: '/images/pokemon/Night wanderer (SV6a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Night wanderer (SV6a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-27', name: 'Mask of Transformation(SV6)', slug: 'pokemon-box-mask-of-transformation-sv6', category: 'pokemon-boxes', subcategory: 'booster-box', price: 73.93, image: '/images/pokemon/Mask of Transformation(SV6).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Mask of Transformation(SV6) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-28', name: 'Crimson Haze(SV5a)', slug: 'pokemon-box-crimson-haze-sv5a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 73.93, image: '/images/pokemon/Crimson Haze(SV5a.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Crimson Haze(SV5a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-29', name: 'Wild Force (SV5K)', slug: 'pokemon-box-wild-force-sv5k', category: 'pokemon-boxes', subcategory: 'booster-box', price: 64.53, image: '/images/pokemon/Wild Force (SV5K）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Wild Force (SV5K) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-30', name: 'Cyber Judge(SV5M)', slug: 'pokemon-box-cyber-judge-sv5m', category: 'pokemon-boxes', subcategory: 'booster-box', price: 105.25, image: '/images/pokemon/Cyber Judge(SV5M）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Cyber Judge(SV5M) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-31', name: 'Shiny Treasure(SV4a)', slug: 'pokemon-box-shiny-treasure-sv4a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 63.28, image: '/images/pokemon/Shiny Treasure (SW4a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Shiny Treasure(SV4a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-32', name: 'Ancient Roar(SV4K)', slug: 'pokemon-box-ancient-roar-sv4k', category: 'pokemon-boxes', subcategory: 'booster-box', price: 61.40, image: '/images/pokemon/Ancient Roar(SV4K）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Ancient Roar(SV4K) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-33', name: 'Future Flash(SV4M)', slug: 'pokemon-box-future-flash-sv4m', category: 'pokemon-boxes', subcategory: 'booster-box', price: 70.17, image: '/images/pokemon/Future Flash(SV4M）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Future Flash(SV4M) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-34', name: 'Raging Surf(SV3a)', slug: 'pokemon-box-raging-surf-sv3a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 104.62, image: '/images/pokemon/Raging Surf(SV3a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Raging Surf(SV3a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-35', name: 'Ruler of Black Flame(SV3)', slug: 'pokemon-box-ruler-of-black-flame-sv3', category: 'pokemon-boxes', subcategory: 'booster-box', price: 301.97, image: '/images/pokemon/Ruler of Black Flame(SV3).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Ruler of Black Flame(SV3) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-36', name: 'Pokemon Card 151(SV2a)', slug: 'pokemon-box-pokemon-card-151-sv2a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 64.53, image: '/images/pokemon/Pokemon Card 151(SV2a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Pokemon Card 151(SV2a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-37', name: 'Snow Hazard (SV2P)', slug: 'pokemon-box-snow-hazard-sv2p', category: 'pokemon-boxes', subcategory: 'booster-box', price: 63.28, image: '/images/pokemon/Snow Hazard (SV2P).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Snow Hazard (SV2P) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-38', name: 'Clay burst (SV2D)', slug: 'pokemon-box-clay-burst-sv2d', category: 'pokemon-boxes', subcategory: 'booster-box', price: 100.24, image: '/images/pokemon/Clay burst (SV2D）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Clay burst (SV2D) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-39', name: 'Triplet Beat(SV1a)', slug: 'pokemon-box-triplet-beat-sv1a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 75.18, image: '/images/pokemon/Triplet Beat(SV1a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Triplet Beat(SV1a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-40', name: 'Scarlet(SV1S)', slug: 'pokemon-box-scarlet-sv1s', category: 'pokemon-boxes', subcategory: 'booster-box', price: 57.64, image: '/images/pokemon/Scarlet(SV1S）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Scarlet(SV1S) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-41', name: 'Violet(SV1V)', slug: 'pokemon-box-violet-sv1v', category: 'pokemon-boxes', subcategory: 'booster-box', price: 162.89, image: '/images/pokemon/Violet(SV1V).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Violet(SV1V) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-42', name: 'VSTAR Universe(s12a)', slug: 'pokemon-box-vstar-universe-s12a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 125.30, image: '/images/pokemon/VSTAR Universe(s12a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'VSTAR Universe(s12a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-43', name: 'Paradigm Triggr(s12)', slug: 'pokemon-box-paradigm-triggr-s12', category: 'pokemon-boxes', subcategory: 'booster-box', price: 62.65, image: '/images/pokemon/Paradigm Triggr(s12).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Paradigm Triggr(s12) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-44', name: 'Incandescent Arcana(s11a)', slug: 'pokemon-box-incandescent-arcana-s11a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 269.39, image: '/images/pokemon/Incandescent Arcana(s11a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Incandescent Arcana(s11a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-45', name: 'Lost Abyss(s11)', slug: 'pokemon-box-lost-abyss-s11', category: 'pokemon-boxes', subcategory: 'booster-box', price: 162.89, image: '/images/pokemon/Lost Abyss(s11).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Lost Abyss(s11) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-46', name: 'Pokemon Go(s10b)', slug: 'pokemon-box-pokemon-go-s10b', category: 'pokemon-boxes', subcategory: 'booster-box', price: 159.75, image: '/images/pokemon/Pokemon Go(s10b).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Pokemon Go(s10b) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-47', name: 'Dark Phantasma(s10a)', slug: 'pokemon-box-dark-phantasma-s10a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 79.56, image: '/images/pokemon/Dark Phantasma(s10a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Dark Phantasma(s10a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-48', name: 'Time Gazer(s10D)', slug: 'pokemon-box-time-gazer-s10d', category: 'pokemon-boxes', subcategory: 'booster-box', price: 75.18, image: '/images/pokemon/Time Gazer(s10D）.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Time Gazer(s10D) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-49', name: 'Space Juggler(s10P)', slug: 'pokemon-box-space-juggler-s10p', category: 'pokemon-boxes', subcategory: 'booster-box', price: 63.28, image: '/images/pokemon/Space Juggler(s10P.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Space Juggler(s10P) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-50', name: 'Battle Region(s9a)', slug: 'pokemon-box-battle-region-s9a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 106.50, image: '/images/pokemon/Battle Region(s9a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Battle Region(s9a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-51', name: 'Shiny Star V (s4a)', slug: 'pokemon-box-shiny-star-v-s4a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 801.90, image: '/images/pokemon/Shiny Star V (s4a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Shiny Star V (s4a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-52', name: 'Eevee Hearos (S6a)', slug: 'pokemon-box-eevee-hearos-s6a', category: 'pokemon-boxes', subcategory: 'booster-box', price: 113.39, image: '/images/pokemon/Eevee Hearos (S6a).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Eevee Hearos (S6a) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-53', name: 'Jet-Black Spirit (s6k)', slug: 'pokemon-box-jet-black-spirit-s6k', category: 'pokemon-boxes', subcategory: 'booster-box', price: 300.71, image: '/images/pokemon/Jet-Black Spirit (s6k).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Jet-Black Spirit (s6k) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-54', name: 'Fusion Arts (s8)', slug: 'pokemon-box-fusion-arts-s8', category: 'pokemon-boxes', subcategory: 'booster-box', price: 110.26, image: '/images/pokemon/Fusion Arts (s8).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Fusion Arts (s8) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-55', name: 'Star Vers (s9)', slug: 'pokemon-box-star-vers-s9', category: 'pokemon-boxes', subcategory: 'booster-box', price: 88.33, image: '/images/pokemon/Star Vers (s9).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Star Vers (s9) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-56', name: 'Vmax Climax (S8b)', slug: 'pokemon-box-vmax-climax-s8b', category: 'pokemon-boxes', subcategory: 'booster-box', price: 77.68, image: '/images/pokemon/Vmax Climax (S8b).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Vmax Climax (S8b) Japanese Factory Sealed.', variants: ['1 BOX'] }
-];
+
 
 // =============================================
 // PRODUCTS — One Piece Boxes
