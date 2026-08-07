@@ -10,7 +10,6 @@ import {
   gradedCards, 
   lorcanaBoosters, 
   opDecks, 
-  pokemonBoxes, 
   etbs,  
   dragonBallBoxes, 
   yugiohBoxes, 

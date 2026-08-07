@@ -13,7 +13,7 @@ export default async function CollectionPage({ params }) {
   const { subcategory } = await params;
   
   let products = [];
-  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...pokemonBoxes, ...etbs];
+  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...etbs];
   let title = "Collection";
 
   if (subcategory === "all") {

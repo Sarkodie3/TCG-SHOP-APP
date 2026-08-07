@@ -56,7 +56,6 @@ export default async function ProductPage({ params }) {
     ...gradedCards,
     ...lorcanaBoosters,
     ...opDecks,
-    ...pokemonBoxes,
     ...etbs,
     ...dragonBallBoxes,
     ...yugiohBoxes,
