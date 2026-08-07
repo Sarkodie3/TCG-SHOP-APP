@@ -65,7 +65,7 @@ export default function CheckoutClient() {
         <div className="checkout-form-section">
           <h2>Shipping & Payment Details</h2>
           <form
-            action="https://formsubmit.co/tcgshopkasumi@gmail.com"
+            action="https://formsubmit.co/tcgshopkagami1@gmail.com"
             method="POST"
             onSubmit={handleSubmit}
             className="checkout-form"
