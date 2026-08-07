@@ -1,7 +1,22 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards } from "@/lib/data";
+import { 
+  pokemonBoosterBoxes, 
+  onePieceBoosterBoxes, 
+  singleCards, 
+  deckSets, 
+  gradingCards, 
+  gradedCards, 
+  lorcanaBoosters, 
+  opDecks, 
+  pokemonBoxes, 
+  onePieceBoxes, 
+  etbs, 
+  dragonBallBoxes, 
+  yugiohBoxes, 
+  boosterBundles 
+} from "@/lib/data";
 
 const allProducts = [
   ...pokemonBoosterBoxes,
@@ -9,6 +24,15 @@ const allProducts = [
   ...singleCards,
   ...deckSets,
   ...gradingCards,
+  ...gradedCards,
+  ...lorcanaBoosters,
+  ...opDecks,
+  ...pokemonBoxes,
+  ...onePieceBoxes,
+  ...etbs,
+  ...dragonBallBoxes,
+  ...yugiohBoxes,
+  ...boosterBundles,
 ];
 
 const quickLinks = [
@@ -71,7 +95,17 @@ export default function SearchBar({ onClose }) {
   }, []);
 
   const categoryLabel = (cat) => {
-    const map = { pokemon: "Pokémon", onepiece: "One Piece", grading: "Grading", lorcana: "Disney LORCANA", dragonball: "Dragon Ball" };
+    const map = { 
+      pokemon: "Pokémon", 
+      onepiece: "One Piece", 
+      grading: "Grading", 
+      lorcana: "Disney LORCANA", 
+      dragonball: "Dragon Ball",
+      "dragonball-boxes": "Dragon Ball",
+      "yugioh-boxes": "Yu-Gi-Oh!",
+      "etbs-boxes": "ETB",
+      "onepiece-boxes": "One Piece"
+    };
     return map[cat] || cat;
   };
 
