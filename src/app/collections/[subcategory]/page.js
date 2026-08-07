@@ -22,18 +22,12 @@ export default async function CollectionPage({ params }) {
   } else if (subcategory === "etbs") {
     products = etbs;
     title = "Elite Trainer Boxes";
-  } else if (subcategory === "pokemon-boxes") {
-    products = pokemonBoxes;
-    title = "Pokémon Booster Boxes";
-  } else if (subcategory === "onepiece-boxes") {
-    products = onePieceBoxes;
-    title = "One Piece Booster Boxes";
-  } else if (subcategory === "pokemon-booster-box") {
-    products = pokemonBoosterBoxes;
-    title = "Pokémon Booster BOX & CASE";
-  } else if (subcategory === "onepiece-booster-box") {
-    products = onePieceBoosterBoxes;
-    title = "One Piece Booster BOX & CASE";
+  } else if (subcategory === "pokemon-boxes" || subcategory === "pokemon-booster-box") {
+    products = [...pokemonBoosterBoxes, ...pokemonBoxes];
+    title = "Pokémon Booster Boxes & Cases";
+  } else if (subcategory === "onepiece-boxes" || subcategory === "onepiece-booster-box") {
+    products = [...onePieceBoosterBoxes, ...onePieceBoxes];
+    title = "One Piece Booster Boxes & Cases";
   } else if (subcategory === "pokemon-single") {
     products = singleCards.filter(p => p.category === "pokemon");
     title = "Pokémon Single Cards";
