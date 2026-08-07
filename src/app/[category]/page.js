@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const categoryStr = (await params).category.replace("-", " ");
@@ -37,6 +37,10 @@ export default async function CategoryPage({ params }) {
     title = "Yughi-oh Cards";
     desc = "Discover iconic Yu-Gi-Oh! booster boxes, decks, and collectible cards.";
     products = yugiohBoxes;
+  } else if (category === "booster-bundles") {
+    title = "Booster Bundles";
+    desc = "Shop authentic TCG Booster Bundles. Perfect for building your collection.";
+    products = boosterBundles;
   } else if (category === "grading") {
     title = "Grading Cards";
     desc = "Professional grading services for your most valuable cards.";

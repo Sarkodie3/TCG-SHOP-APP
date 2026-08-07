@@ -29,6 +29,7 @@ const navLinks = [
   { label: "ETBs", href: "/collections/etbs" },
   { label: "Dragon Ball Cards", href: "/dragon-ball" },
   { label: "Yughi-oh", href: "/yughi-oh" },
+  { label: "Booster Bundles", href: "/booster-bundles" },
   { label: "Grading Cards", href: "/grading" },
   { label: "Customers Review", href: "/customers-review" },
   {
