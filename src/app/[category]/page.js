@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const categoryStr = (await params).category.replace("-", " ");
@@ -32,7 +32,7 @@ export default async function CategoryPage({ params }) {
   } else if (category === "dragon-ball") {
     title = "Dragon Ball Cards";
     desc = "Power up your deck with Dragon Ball Super Card Game Fusion World.";
-    products = [];
+    products = dragonBallBoxes;
   } else if (category === "grading") {
     title = "Grading Cards";
     desc = "Professional grading services for your most valuable cards.";
