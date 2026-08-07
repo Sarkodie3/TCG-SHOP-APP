@@ -15,7 +15,7 @@ export default function CheckoutSuccessPage() {
   }, [items, clearItem]);
 
   return (
-    <main style={{ padding: "6rem 2rem", background: "var(--color-bg)", minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <main className="success-page-wrap">
       <div className="success-container">
         <div className="success-icon">✓</div>
         <h1 className="success-title">Thanks!!</h1>
@@ -35,6 +35,14 @@ export default function CheckoutSuccessPage() {
       </div>
 
       <style jsx>{`
+        .success-page-wrap {
+          padding: 6rem 2rem;
+          background: var(--color-bg);
+          min-height: 80vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         .success-container {
           background: var(--color-bg-card);
           padding: 3rem;
@@ -43,6 +51,7 @@ export default function CheckoutSuccessPage() {
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
           max-width: 600px;
           text-align: center;
+          width: 100%;
         }
         .success-icon {
           width: 80px;
@@ -88,6 +97,21 @@ export default function CheckoutSuccessPage() {
         .mt-4 {
           margin-top: 1rem;
           display: inline-block;
+        }
+
+        @media (max-width: 480px) {
+          .success-page-wrap {
+            padding: 4rem 1rem;
+          }
+          .success-container {
+            padding: 2rem 1.25rem;
+          }
+          .success-title {
+            font-size: 1.75rem;
+          }
+          .payment-notice {
+            padding: 1rem;
+          }
         }
       `}</style>
     </main>
