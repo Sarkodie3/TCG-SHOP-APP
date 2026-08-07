@@ -36,9 +36,24 @@ export async function generateMetadata({ params }) {
     return { title: "Product Not Found | Omotenashi TCG" };
   }
 
+  const keywords = [
+    product.name,
+    product.brand,
+    product.category,
+    product.subcategory,
+    `buy ${product.name}`,
+    `${product.category} cards`,
+    product.subcategory === "booster-box" ? "booster box" : product.subcategory,
+    "Japanese TCG",
+    "authentic TCG",
+    "factory sealed",
+    "Omotenashi TCG"
+  ].filter(Boolean);
+
   return {
     title: `${product.name} | Omotenashi TCG`,
     description: product.description || `Buy ${product.name} at Omotenashi TCG. Authentic Japanese TCG shipped worldwide.`,
+    keywords: keywords,
   };
 }
 
