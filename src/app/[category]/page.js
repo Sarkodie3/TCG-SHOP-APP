@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const categoryStr = (await params).category.replace("-", " ");
@@ -33,6 +33,10 @@ export default async function CategoryPage({ params }) {
     title = "Dragon Ball Cards";
     desc = "Power up your deck with Dragon Ball Super Card Game Fusion World.";
     products = dragonBallBoxes;
+  } else if (category === "yughi-oh" || category === "yugioh") {
+    title = "Yughi-oh Cards";
+    desc = "Discover iconic Yu-Gi-Oh! booster boxes, decks, and collectible cards.";
+    products = yugiohBoxes;
   } else if (category === "grading") {
     title = "Grading Cards";
     desc = "Professional grading services for your most valuable cards.";
