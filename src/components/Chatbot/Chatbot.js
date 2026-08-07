@@ -11,19 +11,12 @@ const KB = [
 • Orders dispatch within **2–5 business days** from Japan (next business day after payment).
 • Weekends & Japanese public holidays: processed the next business day.
 • Estimated delivery times:
-  — USA & Canada: 7–14 days
-  — Europe: 10–18 days
-  — Australia & NZ: 7–12 days
-  — Asia: 5–10 days
-  — Rest of World: 14–21 days
+  — USA & Canada: 4–7 days
+  — Europe: 5–7 days
+  — Australia & NZ: 4–7 days
+  — Asia: 3–5 days
+  — Rest of World: 10–18 days
 • All orders include full tracking. 🌍`,
-  },
-  {
-    keywords: ["duty", "duties", "tax", "vat", "customs", "tariff", "import fee"],
-    reply: `✅ **Duties & Taxes:**
-All duties, VAT, and import fees are **collected at checkout** for most supported countries — zero surprise charges at delivery!
-
-For EU countries, VAT is automatically calculated based on your country's rate (17%–27%). For unsupported countries, your local customs may collect fees upon arrival.`,
   },
   {
     keywords: ["refund", "return", "exchange", "money back", "wrong item", "damaged"],

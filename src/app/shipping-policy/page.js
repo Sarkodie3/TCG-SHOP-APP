@@ -51,11 +51,11 @@ export default function ShippingPolicyPage() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>USA & Canada</td><td>7–14 business days</td></tr>
-              <tr><td>Europe</td><td>10–18 business days</td></tr>
-              <tr><td>Australia & NZ</td><td>7–12 business days</td></tr>
-              <tr><td>Asia</td><td>5–10 business days</td></tr>
-              <tr><td>Rest of World</td><td>14–21 business days</td></tr>
+              <tr><td>USA & Canada</td><td>4–7 business days</td></tr>
+              <tr><td>Europe</td><td>5–7 business days</td></tr>
+              <tr><td>Australia & NZ</td><td>4–7 business days</td></tr>
+              <tr><td>Asia</td><td>3–5 business days</td></tr>
+              <tr><td>Rest of World</td><td>10–18 business days</td></tr>
             </tbody>
           </table>
           <p style={{ marginTop: "0.75rem", fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
@@ -65,11 +65,6 @@ export default function ShippingPolicyPage() {
           <h2>🔍 Tracking</h2>
           <p>All orders include tracking. You will receive a shipping confirmation email with your tracking number once your order has been dispatched. You can use this number to monitor your package's progress on the carrier's website.</p>
 
-          <h2>🛃 Customs & Duties</h2>
-          <p>For most supported countries, all applicable duties and taxes are collected at checkout. Please visit our{" "}
-            <Link href="/tariff-vat" style={{ color: "var(--color-accent-primary)" }}>Tariff &amp; VAT page</Link>{" "}
-            for full details.
-          </p>
 
           <h2>⚠️ Important Notes</h2>
           <ul>

@@ -38,8 +38,6 @@ const navLinks = [
     children: [
       { label: "Wholesale & B2B Inquiries", href: "/wholesale" },
       { label: "Condition Guidelines for Single Cards", href: "/condition-guidelines" },
-      { label: "Tariff & VAT Page", href: "/tariff-vat" },
-      { label: "EU Member States Eligible", href: "/eu-member-states" },
       { label: "Shipping Policy", href: "/shipping-policy" },
       { label: "Refund Policy", href: "/refund-policy" },
     ],
@@ -73,8 +71,7 @@ export default function Navbar() {
       {/* Announcement Bar */}
       <div className="announce-bar">
         <span>
-          Easy shopping: All Duties &amp; Taxes collected at Checkout.{" "}
-          <Link href="/tariff-vat">Learn more →</Link>
+          Shop Pokémon, One Piece, Yu-Gi-Oh and more directly from Japan!
         </span>
       </div>
 
