@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles, pokemonBoxes, onePieceBoxes } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles, pokemonBoxes } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const categoryStr = (await params).category.replace("-", " ");
@@ -24,7 +24,7 @@ export default async function CategoryPage({ params }) {
   } else if (category === "one-piece") {
     title = "One Piece Cards";
     desc = "Discover the world of One Piece TCG. Find the latest Booster Boxes and Singles.";
-    products = [...onePieceBoosterBoxes, ...onePieceBoxes, ...singleCards.filter(p => p.category === "onepiece")];
+    products = [...onePieceBoosterBoxes, ...singleCards.filter(p => p.category === "onepiece")];
   } else if (category === "disney-lorcana") {
     title = "Disney LORCANA";
     desc = "Immerse yourself in the magic of Disney LORCANA.";

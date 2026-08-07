@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, pokemonBoxes, onePieceBoxes, etbs } from "@/lib/data";
+import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, pokemonBoxes, etbs } from "@/lib/data";
 
 export async function generateMetadata({ params }) {
   const subcategory = (await params).subcategory.replace(/-/g, " ");
@@ -13,7 +13,7 @@ export default async function CollectionPage({ params }) {
   const { subcategory } = await params;
   
   let products = [];
-  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...pokemonBoxes, ...onePieceBoxes, ...etbs];
+  const allProducts = [...pokemonBoosterBoxes, ...onePieceBoosterBoxes, ...singleCards, ...deckSets, ...gradingCards, ...pokemonBoxes, ...etbs];
   let title = "Collection";
 
   if (subcategory === "all") {
@@ -26,7 +26,7 @@ export default async function CollectionPage({ params }) {
     products = [...pokemonBoosterBoxes, ...pokemonBoxes];
     title = "Pokémon Booster Boxes & Cases";
   } else if (subcategory === "onepiece-boxes" || subcategory === "onepiece-booster-box") {
-    products = [...onePieceBoosterBoxes, ...onePieceBoxes];
+    products = [...onePieceBoosterBoxes];
     title = "One Piece Booster Boxes & Cases";
   } else if (subcategory === "pokemon-single") {
     products = singleCards.filter(p => p.category === "pokemon");

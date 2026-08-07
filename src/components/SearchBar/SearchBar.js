@@ -11,8 +11,7 @@ import {
   lorcanaBoosters, 
   opDecks, 
   pokemonBoxes, 
-  onePieceBoxes, 
-  etbs, 
+  etbs,  
   dragonBallBoxes, 
   yugiohBoxes, 
   boosterBundles 
@@ -28,7 +27,6 @@ const allProducts = [
   ...lorcanaBoosters,
   ...opDecks,
   ...pokemonBoxes,
-  ...onePieceBoxes,
   ...etbs,
   ...dragonBallBoxes,
   ...yugiohBoxes,
