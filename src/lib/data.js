@@ -1311,7 +1311,63 @@ export const pokemonBoosterBoxes = [
 { id: 'pokemon-box-14', name: 'Black Volt Deluxe(SV11B)', slug: 'pokemon-box-black-volt-deluxe-sv11b', category: 'pokemon-boxes', subcategory: 'booster-box', price: 120.29, image: '/images/pokemon/Black Volt Deleuxe (SV11B).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Black Volt Deluxe(SV11B) Japanese Factory Sealed.', variants: ['1 BOX'] },
 { id: 'pokemon-box-18', name: 'Team Rocket Attach� Case', slug: 'pokemon-box-team-rocket-attach-case', category: 'pokemon-boxes', subcategory: 'booster-box', price: 144.09, image: '/images/pokemon/Team Rocket Attaché Case.jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Team Rocket Attach� Case Japanese Factory Sealed.', variants: ['1 BOX'] },
 { id: 'pokemon-box-54', name: 'Fusion Arts (s8)', slug: 'pokemon-box-fusion-arts-s8', category: 'pokemon-boxes', subcategory: 'booster-box', price: 110.26, image: '/images/pokemon/Fusion Arts (s8).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Fusion Arts (s8) Japanese Factory Sealed.', variants: ['1 BOX'] },
-{ id: 'pokemon-box-55', name: 'Star Vers (s9)', slug: 'pokemon-box-star-vers-s9', category: 'pokemon-boxes', subcategory: 'booster-box', price: 88.33, image: '/images/pokemon/Star Vers (s9).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Star Vers (s9) Japanese Factory Sealed.', variants: ['1 BOX'] }
+{ id: 'pokemon-box-55', name: 'Star Vers (s9)', slug: 'pokemon-box-star-vers-s9', category: 'pokemon-boxes', subcategory: 'booster-box', price: 88.33, image: '/images/pokemon/Star Vers (s9).jpg', badge: '', reviews: 0, brand: 'Pokemon', description: 'Star Vers (s9) Japanese Factory Sealed.', variants: ['1 BOX'] },
+  {
+    id: "tcg-pk-mystery-box",
+    name: "Sword & Shield Mystery Box",
+    slug: "sword-shield-mystery-box-tcg-box",
+    category: "pokemon",
+    subcategory: "booster-box",
+    price: 258.11,
+    image: '/images/pokemon/Sword & Shield Mystery Box.jpg',
+    badge: "",
+    reviews: 0,
+    brand: "Pokemon",
+    description: "Sword & Shield Mystery Box Japanese Factory Sealed.",
+    variants: ["1 BOX"]
+  },
+  {
+    id: "tcg-pk-vmax-climax",
+    name: "Vmax Climax (S8b)",
+    slug: "vmax-climax-s8b-tcg-box",
+    category: "pokemon",
+    subcategory: "booster-box",
+    price: 77.68,
+    image: '/images/pokemon/Vmax Climax (S8b).jpg',
+    badge: "",
+    reviews: 0,
+    brand: "Pokemon",
+    description: "Vmax Climax (S8b) Japanese Factory Sealed.",
+    variants: ["1 BOX"]
+  },
+  {
+    id: "tcg-pk-silver-lance",
+    name: "Silver Lance (S6H)",
+    slug: "silver-lance-s6h-tcg-box",
+    category: "pokemon",
+    subcategory: "booster-box",
+    price: 113.39,
+    image: '/images/pokemon/Silver Lance (S6H).jpg',
+    badge: "",
+    reviews: 0,
+    brand: "Pokemon",
+    description: "Silver Lance (S6H) Japanese Factory Sealed.",
+    variants: ["1 BOX"]
+  },
+  {
+    id: "tcg-pk-special-deck-ex",
+    name: "Special Deck Set ex",
+    slug: "special-deck-set-ex-tcg-box",
+    category: "pokemon",
+    subcategory: "booster-box",
+    price: 99.99,
+    image: '/images/pokemon/Special Deck Set ex.jpg',
+    badge: "",
+    reviews: 0,
+    brand: "Pokemon",
+    description: "Special Deck Set ex Japanese Factory Sealed.",
+    variants: ["1 BOX"]
+  }
 ];
 
 
