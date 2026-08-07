@@ -2087,12 +2087,12 @@ export const onePieceBoxes = [
   },
   {
     id: "op-box-23",
-    name: "3rd Campaign Promo",
-    slug: "op-box-3rd-campaign-promo",
+    name: "3rd Captain Promo",
+    slug: "op-box-3rd-captain-promo",
     category: "onepiece",
     subcategory: "booster-box",
     price: 5.01,
-    image: "https://placehold.co/600x600/f5f5f5/999999?text=3rd%20Campaign%20Promo",
+    image: '/images/onepiece/3rd Captain Promo.jpg',
     badge: "",
     reviews: 0,
     brand: "One Piece",
@@ -2446,10 +2446,7 @@ export const etbs = [
 
 
 
-// Auto-generated array for One Piece
-export const onePiecePromoBoxes = [
-  { id: 'onepiece-box-promo-1', name: '3rd Captain Promo', slug: 'onepiece-box-3rdcaptainpromo', category: 'onepiece-boxes', subcategory: 'booster-box', price: 99.99, image: '/images/onepiece/3rd Captain Promo.jpg', badge: '', reviews: 0, brand: 'One Piece', description: '3rd Captain Promo Factory Sealed.', variants: ['1 BOX'] },
-];
+
 
 // Auto-generated array for ETB
 export const etbBoxes = [
