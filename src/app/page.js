@@ -229,7 +229,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="product-grid">
-            {onePieceBoxes.map((p) => (
+            {[...onePieceBoosterBoxes, ...onePieceBoxes].map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
