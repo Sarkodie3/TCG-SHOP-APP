@@ -27,7 +27,7 @@ export default function Footer() {
             <nav className="footer-links" aria-label="Shop links">
               <Link href="/pokemon" className="footer-link">Pokémon Cards</Link>
               <Link href="/one-piece" className="footer-link">One Piece Cards</Link>
-              <Link href="/disney-lorcana" className="footer-link">Disney LORCANA</Link>
+              <Link href="/collections/etbs" className="footer-link">ETBs</Link>
               <Link href="/dragon-ball" className="footer-link">Dragon Ball Cards</Link>
               <Link href="/yughi-oh" className="footer-link">Yughi-oh Cards</Link>
               <Link href="/booster-bundles" className="footer-link">Booster Bundles</Link>
