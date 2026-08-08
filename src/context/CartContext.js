@@ -47,6 +47,11 @@ export default function CartProvider({ children }) {
     setItems((prev) => prev.filter((i) => i.key !== key));
   }, []);
 
+  /** Clear entire cart */
+  const clearCart = useCallback(() => {
+    setItems([]);
+  }, []);
+
   /** Adjust qty by a delta (+1 or -1), removes if qty reaches 0 */
   const updateQty = useCallback((key, delta) => {
     setItems((prev) =>
@@ -61,7 +66,7 @@ export default function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ items, count, total, addItem, removeItem, clearItem, updateQty, isOpen, setIsOpen }}
+      value={{ items, count, total, addItem, removeItem, clearItem, clearCart, updateQty, isOpen, setIsOpen }}
     >
       {children}
     </CartContext.Provider>

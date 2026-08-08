@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function CheckoutClient() {
-  const { items, total, clearItem } = useCart();
+  const { items, total, clearCart } = useCart();
   const { formatPrice } = useCurrency();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,9 +49,29 @@ export default function CheckoutClient() {
   const totalText = formatPrice(total);
   const orderSummary = `${cartSummaryText}\n\nTOTAL: ${totalText}`;
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    // Do not clear the cart here, it cancels the form submission!
+
+    const formData = new FormData(e.target);
+
+    try {
+      await fetch("https://formsubmit.co/ajax/tcgshopkagami1@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      // Clear cart and redirect immediately to success page
+      clearCart();
+      router.push("/checkout/success");
+    } catch (error) {
+      console.error("Checkout AJAX submission error:", error);
+      clearCart();
+      router.push("/checkout/success");
+    }
   };
 
   return (
