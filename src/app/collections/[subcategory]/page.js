@@ -5,7 +5,7 @@ import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradi
 export async function generateMetadata({ params }) {
   const subcategory = (await params).subcategory.replace(/-/g, " ");
   return {
-    title: `${subcategory.toUpperCase()} | Omotenashi TCG Collection`,
+    title: `${subcategory.toUpperCase()} | KAGAMI TCG Shop`,
   };
 }
 

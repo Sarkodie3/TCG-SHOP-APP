@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
   const product = allProducts.find(p => p.slug === slug);
   
   if (!product) {
-    return { title: "Product Not Found | Omotenashi TCG" };
+    return { title: "Product Not Found | KAGAMI TCG Shop" };
   }
 
   const keywords = [
@@ -47,12 +47,12 @@ export async function generateMetadata({ params }) {
     "Japanese TCG",
     "authentic TCG",
     "factory sealed",
-    "Omotenashi TCG"
+    "KAGAMI TCG Shop"
   ].filter(Boolean);
 
   return {
-    title: `${product.name} | Omotenashi TCG`,
-    description: product.description || `Buy ${product.name} at Omotenashi TCG. Authentic Japanese TCG shipped worldwide.`,
+    title: `${product.name} | KAGAMI TCG Shop`,
+    description: product.description || `Buy ${product.name} at KAGAMI TCG Shop. Authentic Japanese TCG shipped worldwide.`,
     keywords: keywords,
   };
 }
