@@ -88,11 +88,6 @@
     height: 38px;
   }
 
-  /* Hide currency on very small screens */
-  .navbar-currency {
-    display: none;
-  }
-
   .navbar-right {
     gap: 0.4rem;
   }

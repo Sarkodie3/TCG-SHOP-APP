@@ -70,9 +70,26 @@ export default function Navbar() {
     <>
       {/* Announcement Bar */}
       <div className="announce-bar">
-        <span>
+        <span className="announce-text desktop-only">
           Shop Pokémon, One Piece, Yu-Gi-Oh and more directly from Japan!
         </span>
+        <span className="announce-text mobile-only">
+          🇯🇵 Shipped Direct from Japan
+        </span>
+        {/* Currency Selector */}
+        <div className="announce-currency">
+          <select
+            className="announce-select"
+            aria-label="Select currency"
+            id="currency-selector"
+            value={currency}
+            onChange={(e) => changeCurrency(e.target.value)}
+          >
+            {currencies.map((c, i) => (
+              <option key={`${c.code}-${i}`} value={c.code}>{c.label}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Main Navbar */}
@@ -112,20 +129,7 @@ export default function Navbar() {
 
           {/* Right Side */}
           <div className="navbar-right">
-            {/* Currency Selector */}
-            <div className="navbar-currency">
-              <select
-                className="currency-select"
-                aria-label="Select currency"
-                id="currency-selector"
-                value={currency}
-                onChange={(e) => changeCurrency(e.target.value)}
-              >
-                {currencies.map((c, i) => (
-                  <option key={`${c.code}-${i}`} value={c.code}>{c.label}</option>
-                ))}
-              </select>
-            </div>
+            {/* Currency Selector removed here to stay at the top bar */}
 
             {/* Search */}
             <button
