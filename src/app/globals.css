@@ -755,6 +755,16 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   filter: brightness(1.08);
 }
 
+.cart-checkout-btn:disabled {
+  background: var(--color-bg-tertiary) !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text-muted) !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  filter: none !important;
+}
+
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;

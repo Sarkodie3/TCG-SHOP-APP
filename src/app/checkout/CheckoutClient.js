@@ -36,6 +36,25 @@ export default function CheckoutClient() {
     );
   }
 
+  if (total < 550) {
+    return (
+      <div style={{ textAlign: "center", padding: "5rem 2rem", maxWidth: "600px", margin: "4rem auto" }}>
+        <div style={{ fontSize: "3rem", marginBottom: "1.5rem" }}>⚠️</div>
+        <h2 style={{ fontSize: "1.75rem", marginBottom: "1rem" }}>Minimum Order Required</h2>
+        <p style={{ color: "var(--color-text-muted)", fontSize: "1rem", lineHeight: "1.6" }}>
+          The minimum order value for this website is <strong style={{ color: "var(--color-text)" }}>{formatPrice(550)}</strong> (equivalent to $550 USD). 
+          Your current order value is only <strong style={{ color: "var(--color-accent-primary)" }}>{formatPrice(total)}</strong>.
+        </p>
+        <p style={{ color: "var(--color-text-muted)", marginTop: "1rem", fontSize: "0.95rem" }}>
+          Please add at least <strong style={{ color: "var(--color-text)" }}>{formatPrice(550 - total)}</strong> more in products to complete checkout.
+        </p>
+        <Link href="/" className="btn btn-primary" style={{ marginTop: "2.5rem", display: "inline-block", padding: "0.8rem 2rem" }}>
+          Continue Shopping
+        </Link>
+      </div>
+    );
+  }
+
   // Format cart contents for the email (always USD for clarity to admin)
   const cartSummaryText = items
     .map(
