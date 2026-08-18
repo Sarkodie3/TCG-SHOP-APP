@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import CartProvider from "@/context/CartContext";
 import CurrencyProvider from "@/context/CurrencyContext";
 import Chatbot from "@/components/Chatbot/Chatbot";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "KAGAMI | Japanese TCG Store",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
             <Chatbot />
           </CartProvider>
         </CurrencyProvider>
+        <Analytics />
       </body>
     </html>
   );
