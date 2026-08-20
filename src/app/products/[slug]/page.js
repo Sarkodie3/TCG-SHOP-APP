@@ -15,21 +15,28 @@ import {
 } from "@/lib/data";
 import ProductDetailClient from "./ProductDetailClient";
 
+export const revalidate = 3600;
+
+const allProducts = [
+  ...pokemonBoosterBoxes,
+  ...onePieceBoosterBoxes,
+  ...singleCards,
+  ...deckSets,
+  ...gradingCards,
+  ...gradedCards,
+  ...opDecks,
+  ...etbs,
+  ...dragonBallBoxes,
+  ...yugiohBoxes,
+  ...boosterBundles,
+];
+
+export function generateStaticParams() {
+  return allProducts.map(({ slug }) => ({ slug }));
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const allProducts = [
-    ...pokemonBoosterBoxes, 
-    ...onePieceBoosterBoxes, 
-    ...singleCards, 
-    ...deckSets, 
-    ...gradingCards,
-    ...gradedCards,
-    ...opDecks,
-    ...etbs,
-    ...dragonBallBoxes,
-    ...yugiohBoxes,
-    ...boosterBundles
-  ];
   const product = allProducts.find(p => p.slug === slug);
   
   if (!product) {
@@ -59,20 +66,6 @@ export async function generateMetadata({ params }) {
 
 export default async function ProductPage({ params }) {
   const { slug } = await params;
-  
-  const allProducts = [
-    ...pokemonBoosterBoxes, 
-    ...onePieceBoosterBoxes, 
-    ...singleCards, 
-    ...deckSets, 
-    ...gradingCards,
-    ...gradedCards,
-    ...opDecks,
-    ...etbs,
-    ...dragonBallBoxes,
-    ...yugiohBoxes,
-    ...boosterBundles
-  ];
   const product = allProducts.find(p => p.slug === slug);
 
   if (!product) {

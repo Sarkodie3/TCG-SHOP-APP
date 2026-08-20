@@ -2,6 +2,23 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, dragonBallBoxes, yugiohBoxes, boosterBundles } from "@/lib/data";
 
+export const revalidate = 3600;
+
+const categorySlugs = [
+  "pokemon",
+  "one-piece",
+  "disney-lorcana",
+  "dragon-ball",
+  "yughi-oh",
+  "yugioh",
+  "booster-bundles",
+  "grading",
+];
+
+export function generateStaticParams() {
+  return categorySlugs.map((category) => ({ category }));
+}
+
 export async function generateMetadata({ params }) {
   const categoryStr = (await params).category.replace("-", " ");
   return {

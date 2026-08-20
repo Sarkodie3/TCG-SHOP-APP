@@ -2,6 +2,25 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import { pokemonBoosterBoxes, onePieceBoosterBoxes, singleCards, deckSets, gradingCards, etbs } from "@/lib/data";
 
+export const revalidate = 3600;
+
+const collectionSlugs = [
+  "all",
+  "etbs",
+  "pokemon-boxes",
+  "pokemon-booster-box",
+  "onepiece-boxes",
+  "onepiece-booster-box",
+  "pokemon-single",
+  "onepiece-single",
+  "pokemon-deck",
+  "onepiece-deck",
+];
+
+export function generateStaticParams() {
+  return collectionSlugs.map((subcategory) => ({ subcategory }));
+}
+
 export async function generateMetadata({ params }) {
   const subcategory = (await params).subcategory.replace(/-/g, " ");
   return {
