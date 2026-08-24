@@ -75,7 +75,7 @@ export const onePieceBoosterBoxes = [
     slug: "op-17-worlds-strongest-warriors-tcg-box-case",
     category: "onepiece",
     subcategory: "booster-box",
-    price: 112.77,
+    price: 163,
     casePrice: 1392.12, // 6 boxes
     image: '/images/onepiece/OP-17.jpg',
     badge: "new",
@@ -467,7 +467,7 @@ export const onePieceBoosterBoxes = [
   },
 {
     id: "op-box-23",
-    name: "3rd Captain Promo",
+    name: "3rd Campaign Promo",
     slug: "op-box-3rd-captain-promo",
     category: "onepiece",
     subcategory: "booster-box",
@@ -544,7 +544,7 @@ export const onePieceBoosterBoxes = [
 export const pokemonBoosterBoxes = [
 {
     id: "tcg-pk-sv-101",
-    name: "Storm Emerard (M6)",
+    name: "Storm Emerald (M6)",
     slug: "storm-emerard-m6-tcg-box",
     category: "pokemon",
     subcategory: "booster-box",
@@ -679,11 +679,11 @@ export const pokemonBoosterBoxes = [
   },
 {
     id: "tcg-pk-sv-110",
-    name: "Pokemon Center Mega Blave",
+    name: "Pokemon Center Mega Brave",
     slug: "pokemon-center-mega-blave-tcg-box",
     category: "pokemon",
     subcategory: "booster-box",
-    price: 119.03,
+    price: 117.03,
     casePrice: null,
     image: '/images/pokemon/Pokemon Center mega Blave.jpg',
     badge: null,
@@ -754,7 +754,7 @@ export const pokemonBoosterBoxes = [
   },
 {
     id: "tcg-pk-sv-115",
-    name: "Black Volt(SV11B)",
+    name: "Black Bolt(SV11B)",
     slug: "black-volt-sv11b-tcg-box",
     category: "pokemon",
     subcategory: "booster-box",
@@ -1616,7 +1616,7 @@ export const deckSets = [
     slug: '30th-celebration-futuristic-box',
     category: 'pokemon',
     subcategory: 'deck',
-    price: 285.27,
+    price: 390.88,
     image: 'https://cdn.shopify.com/s/files/1/0614/1499/8212/files/5_89fad6ab-c531-4f9a-99ae-c6ed9cf29f68.png?v=1783486530',
     badge: 'hot',
     reviews: 0,
