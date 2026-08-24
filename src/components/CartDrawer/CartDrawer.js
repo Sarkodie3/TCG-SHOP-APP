@@ -192,26 +192,9 @@ export default function CartDrawer() {
               <span style={{ color: "var(--color-accent-primary)" }}>{formatPrice(total)}</span>
             </div>
 
-            {total < 550 ? (
-              <div style={{
-                background: "rgba(230, 57, 70, 0.15)",
-                border: "1px solid rgba(230, 57, 70, 0.3)",
-                padding: "0.6rem 0.8rem",
-                borderRadius: "var(--radius-sm)",
-                color: "#ff6b6b",
-                fontSize: "0.78rem",
-                textAlign: "center",
-                margin: "0.6rem 0 0.8rem",
-                lineHeight: "1.4"
-              }}>
-                ⚠️ Minimum order is <strong>{formatPrice(550)}</strong>.<br />
-                Please add <strong>{formatPrice(550 - total)}</strong> more to checkout.
-              </div>
-            ) : (
-              <p style={{ fontSize: "0.72rem", color: "var(--color-text-muted)", textAlign: "center", margin: "0.5rem 0 0.75rem" }}>
-                Taxes and shipping calculated at checkout
-              </p>
-            )}
+            <p style={{ fontSize: "0.72rem", color: "var(--color-text-muted)", textAlign: "center", margin: "0.5rem 0 0.75rem" }}>
+              Taxes and shipping calculated at checkout
+            </p>
 
             {/* Buttons */}
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
@@ -219,7 +202,6 @@ export default function CartDrawer() {
                 className="cart-checkout-btn"
                 id="checkout-btn"
                 aria-label="Proceed to checkout"
-                disabled={total < 550}
                 onClick={() => {
                   setIsOpen(false);
                   router.push('/checkout');
