@@ -18,15 +18,22 @@ export default function CheckoutSuccessPage() {
     <main className="success-page-wrap">
       <div className="success-container">
         <div className="success-icon">✓</div>
-        <h1 className="success-title">Thanks!!</h1>
-        <p className="success-message" style={{ color: "var(--color-text)", fontWeight: "500", fontSize: "1.1rem" }}>
-          your order has been submited successfully.
-        </p>
+        <h1 className="success-title">Payment Successful</h1>
+        <div className="success-message" style={{ color: "var(--color-text)", fontSize: "1.1rem", lineHeight: "1.8" }}>
+          <p style={{ fontWeight: "600", fontSize: "1.25rem", marginBottom: "0.5rem" }}>Thank you for your order! 🎉</p>
+          <p style={{ marginBottom: "1rem" }}>Your payment has been successfully received.</p>
+        </div>
         <div className="payment-notice">
-          <p>
-            A secure payment link will be sent to your email address in less than 10 minutes. 
-            Please check your inbox (and spam folder) to complete your payment and finalize the order. 
-            Ensure to submit again if you dont recieve a mail thanks!!
+          <p style={{ marginBottom: "1rem" }}>
+            You’ll receive a confirmation email from the team.<br />
+            Your order is now being processed by our team. We will carefully prepare your items and provide shipping/tracking information once your order has been dispatched.
+          </p>
+          <p style={{ fontWeight: "700", color: "var(--color-success)", fontSize: "1.15rem", marginBottom: "1.5rem" }}>
+            Order Status: Payment Confirmed ✅
+          </p>
+          <p style={{ fontStyle: "italic" }}>
+            Thank you for choosing TCG SHOP KAGAMI JAPAN.<br/>
+            We appreciate your business and look forward to serving you again!
           </p>
         </div>
         <Link href="/" className="btn btn-primary mt-4">
