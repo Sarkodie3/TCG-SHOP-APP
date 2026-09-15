@@ -5,14 +5,20 @@ import { useCurrency } from "@/context/CurrencyContext";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { useRouter } from "next/navigation";
+
 export default function CheckoutClient() {
-  const { items, total } = useCart();
+  const { items, total, clearCart } = useCart();
   const { formatPrice } = useCurrency();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
+
+  const [origin, setOrigin] = useState("");
 
   useEffect(() => {
     setMounted(true);
+    setOrigin(window.location.origin);
   }, []);
 
   if (!mounted) return null;
@@ -49,42 +55,41 @@ export default function CheckoutClient() {
     );
   }
 
+  // Format cart contents for the email (always USD for clarity to admin)
+  const cartSummaryText = items
+    .map(
+      (item) =>
+        `${item.qty}x ${item.name} ${item.variant ? `(${item.variant})` : ""} - ${formatPrice(
+          item.price * item.qty
+        )}`
+    )
+    .join("\n");
+  
+  const totalText = formatPrice(total);
+  const orderSummary = `${cartSummaryText}\n\nTOTAL: ${totalText}`;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     const formData = new FormData(e.target);
 
-    const customer = {
-      name: formData.get("Full Name"),
-      email: formData.get("email"),
-      phone: formData.get("Phone Number"),
-      address: formData.get("Address"),
-      city: formData.get("City"),
-      state: formData.get("State"),
-      zip: formData.get("ZIP Code"),
-      country: formData.get("Country"),
-    };
-
     try {
-      const res = await fetch("/api/checkout", {
+      await fetch("https://formsubmit.co/ajax/tcgshopkagami1@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items, customer }),
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
       });
 
-      const data = await res.json();
-
-      if (data.url) {
-        // Redirect to Stripe hosted payment page
-        window.location.href = data.url;
-      } else {
-        throw new Error(data.error || "Failed to create checkout session");
-      }
+      // Clear cart and redirect immediately to success page
+      clearCart();
+      router.push("/checkout/success");
     } catch (error) {
-      console.error("Stripe checkout error:", error);
-      alert("Payment could not be initiated. Please try again.");
-      setIsSubmitting(false);
+      console.error("Checkout AJAX submission error:", error);
+      clearCart();
+      router.push("/checkout/success");
     }
   };
 
@@ -99,9 +104,20 @@ export default function CheckoutClient() {
         <div className="checkout-form-section">
           <h2>Shipping & Payment Details</h2>
           <form
+            action="https://formsubmit.co/tcgshopkagami1@gmail.com"
+            method="POST"
             onSubmit={handleSubmit}
             className="checkout-form"
           >
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="New Order Received - KAGAMI!" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            {origin && <input type="hidden" name="_next" value={`${origin}/checkout/success`} />}
+            
+            {/* Order Data */}
+            <input type="hidden" name="Order Details" value={orderSummary} />
+            <input type="hidden" name="Total Amount" value={totalText} />
             {/* Shipping Fields */}
             <div className="form-group">
               <label>Full Name *</label>
@@ -146,24 +162,27 @@ export default function CheckoutClient() {
               </div>
             </div>
 
-            {/* Card payment info */}
-            <div style={{
-              display: "flex", alignItems: "center", gap: "0.6rem",
-              padding: "0.75rem 1rem", background: "rgba(255,255,255,0.04)",
-              border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)",
-              marginTop: "0.5rem"
-            }}>
-              <span style={{ fontSize: "1.4rem" }}>💳</span>
-              <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
-                You will be redirected to a secure Stripe payment page to enter your card details.
-              </span>
+            <div className="payment-method-section">
+              <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", color: "var(--color-text)" }}>
+                Select Payment Method *
+              </label>
+              <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
+                  <input type="radio" name="Payment Method" value="Wise" required style={{ width: "16px", height: "16px" }} />
+                  Wise
+                </label>
+                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
+                  <input type="radio" name="Payment Method" value="Credit Card Link Payment" required style={{ width: "16px", height: "16px" }} />
+                  Credit Card Link Payment
+                </label>
+              </div>
             </div>
 
             <button type="submit" className="btn btn-primary checkout-submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? "Redirecting to Payment..." : "Proceed to Payment →"}
+              {isSubmitting ? "Processing..." : "Submit Order"}
             </button>
             <p className="secure-badge">
-              🔒 Payments are securely processed by Stripe
+              🔒 Your information is secure and encrypted
             </p>
           </form>
         </div>
