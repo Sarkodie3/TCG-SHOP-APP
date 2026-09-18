@@ -25,16 +25,21 @@ export async function POST(request) {
       </div>
     `;
 
-    await resend.emails.send({
+    const { data: resendData, error: resendError } = await resend.emails.send({
       from: 'KAGAMI TCG Orders <onboarding@resend.dev>',
       to: 'tcgshopkagami1@gmail.com',
       subject: 'New Order (' + paymentMethod + ') - ' + customer.name + ' | KAGAMI TCG',
       html
     });
 
-    return NextResponse.json({ success: true });
+    if (resendError) {
+      console.error('Resend API Error:', resendError);
+      return NextResponse.json({ error: resendError.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true, data: resendData });
   } catch (error) {
     console.error('Failed to send order email via Resend:', error);
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Failed to send email' }, { status: 500 });
   }
 }

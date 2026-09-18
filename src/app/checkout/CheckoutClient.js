@@ -88,7 +88,7 @@ export default function CheckoutClient() {
     const paymentMethod = formData.get("Payment Method");
 
     try {
-      await fetch("/api/order", {
+      const res = await fetch("/api/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -100,13 +100,19 @@ export default function CheckoutClient() {
         }),
       });
 
+      const data = await res.json();
+
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "Failed to process order");
+      }
+
       // Clear cart and redirect immediately to success page
       clearCart();
       router.push("/checkout/success");
     } catch (error) {
       console.error("Checkout submission error:", error);
-      clearCart();
-      router.push("/checkout/success");
+      alert("There was a problem submitting your order. Please try again or contact support.");
+      setIsSubmitting(false);
     }
   };
 
