@@ -74,20 +74,37 @@ export default function CheckoutClient() {
 
     const formData = new FormData(e.target);
 
+    const customer = {
+      name: formData.get("Full Name"),
+      email: formData.get("email"),
+      phone: formData.get("Phone Number"),
+      address: formData.get("Address"),
+      city: formData.get("City"),
+      state: formData.get("State"),
+      zip: formData.get("ZIP Code"),
+      country: formData.get("Country"),
+    };
+    
+    const paymentMethod = formData.get("Payment Method");
+
     try {
-      await fetch("https://formsubmit.co/ajax/tcgshopkagami1@gmail.com", {
+      await fetch("/api/order", {
         method: "POST",
-        body: formData,
-        headers: {
-          "Accept": "application/json"
-        }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items,
+          customer,
+          paymentMethod,
+          totalText,
+          orderSummary
+        }),
       });
 
       // Clear cart and redirect immediately to success page
       clearCart();
       router.push("/checkout/success");
     } catch (error) {
-      console.error("Checkout AJAX submission error:", error);
+      console.error("Checkout submission error:", error);
       clearCart();
       router.push("/checkout/success");
     }
@@ -104,20 +121,9 @@ export default function CheckoutClient() {
         <div className="checkout-form-section">
           <h2>Shipping & Payment Details</h2>
           <form
-            action="https://formsubmit.co/tcgshopkagami1@gmail.com"
-            method="POST"
             onSubmit={handleSubmit}
             className="checkout-form"
           >
-            {/* FormSubmit Configuration */}
-            <input type="hidden" name="_subject" value="New Order Received - KAGAMI!" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            {origin && <input type="hidden" name="_next" value={`${origin}/checkout/success`} />}
-            
-            {/* Order Data */}
-            <input type="hidden" name="Order Details" value={orderSummary} />
-            <input type="hidden" name="Total Amount" value={totalText} />
             {/* Shipping Fields */}
             <div className="form-group">
               <label>Full Name *</label>
