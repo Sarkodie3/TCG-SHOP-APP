@@ -211,32 +211,69 @@ export default function CheckoutClient() {
                 </div>
 
                 {paymentMethod === "Crypto" && (
-                  <div className="form-group" style={{ marginTop: "0.25rem", maxWidth: "320px" }}>
-                    <label style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", marginBottom: "0.35rem" }}>
-                      Select Cryptocurrency *
-                    </label>
-                    <select
-                      name="Crypto Currency"
-                      value={cryptoCurrency}
-                      onChange={(e) => setCryptoCurrency(e.target.value)}
-                      required
-                      style={{
-                        padding: "0.6rem 0.8rem",
-                        borderRadius: "var(--radius-sm)",
-                        border: "1px solid var(--color-border)",
-                        background: "var(--color-bg)",
-                        color: "var(--color-text)",
-                        fontSize: "0.95rem",
-                        width: "100%",
-                        outline: "none"
-                      }}
-                    >
-                      <option value="BTC">BTC</option>
-                      <option value="TRC20(USDT)">TRC20(USDT)</option>
-                      <option value="SOL">SOL</option>
-                      <option value="LTC">LTC</option>
-                      <option value="ETH">ETH</option>
-                    </select>
+                  <div style={{ marginTop: "0.5rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                    <div className="form-group" style={{ maxWidth: "340px" }}>
+                      <label style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", marginBottom: "0.35rem" }}>
+                        Select Cryptocurrency *
+                      </label>
+                      <select
+                        name="Crypto Currency"
+                        value={cryptoCurrency}
+                        onChange={(e) => setCryptoCurrency(e.target.value)}
+                        required
+                        style={{
+                          padding: "0.65rem 0.9rem",
+                          borderRadius: "var(--radius-sm)",
+                          border: "1px solid var(--color-border)",
+                          background: "#1c1c21",
+                          color: "#ffffff",
+                          fontSize: "0.95rem",
+                          width: "100%",
+                          outline: "none",
+                          cursor: "pointer"
+                        }}
+                      >
+                        <option value="BTC" style={{ background: "#1c1c21", color: "#ffffff" }}>BTC</option>
+                        <option value="TRC20(USDT)" style={{ background: "#1c1c21", color: "#ffffff" }}>TRC20(USDT)</option>
+                        <option value="SOL" style={{ background: "#1c1c21", color: "#ffffff" }}>SOL</option>
+                        <option value="LTC" style={{ background: "#1c1c21", color: "#ffffff" }}>LTC</option>
+                        <option value="ETH" style={{ background: "#1c1c21", color: "#ffffff" }}>ETH</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <div style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", marginBottom: "0.4rem" }}>
+                        Choose your coin:
+                      </div>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                        {["BTC", "TRC20(USDT)", "SOL", "LTC", "ETH"].map((coin) => (
+                          <button
+                            key={coin}
+                            type="button"
+                            onClick={() => setCryptoCurrency(coin)}
+                            style={{
+                              padding: "0.45rem 0.85rem",
+                              borderRadius: "6px",
+                              border: cryptoCurrency === coin
+                                ? "2px solid var(--color-accent-primary)"
+                                : "1px solid var(--color-border)",
+                              background: cryptoCurrency === coin
+                                ? "rgba(230, 57, 70, 0.2)"
+                                : "rgba(255, 255, 255, 0.05)",
+                              color: cryptoCurrency === coin
+                                ? "var(--color-accent-primary)"
+                                : "var(--color-text)",
+                              fontSize: "0.85rem",
+                              fontWeight: cryptoCurrency === coin ? "700" : "500",
+                              cursor: "pointer",
+                              transition: "all 0.15s ease"
+                            }}
+                          >
+                            {cryptoCurrency === coin ? "✓ " : ""}{coin}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
