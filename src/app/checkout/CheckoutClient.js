@@ -12,6 +12,8 @@ export default function CheckoutClient() {
   const { formatPrice } = useCurrency();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("Wise");
+  const [cryptoCurrency, setCryptoCurrency] = useState("BTC");
   const router = useRouter();
 
   const [origin, setOrigin] = useState("");
@@ -85,7 +87,9 @@ export default function CheckoutClient() {
       country: formData.get("Country"),
     };
     
-    const paymentMethod = formData.get("Payment Method");
+    const selectedMethod = formData.get("Payment Method") || paymentMethod;
+    const selectedCrypto = formData.get("Crypto Currency") || cryptoCurrency;
+    const finalPaymentMethod = selectedMethod === "Crypto" ? `Crypto (${selectedCrypto})` : selectedMethod;
 
     try {
       const res = await fetch("/api/order", {
@@ -94,7 +98,7 @@ export default function CheckoutClient() {
         body: JSON.stringify({
           items,
           customer,
-          paymentMethod,
+          paymentMethod: finalPaymentMethod,
           totalText,
           orderSummary
         }),
@@ -178,15 +182,63 @@ export default function CheckoutClient() {
               <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "600", color: "var(--color-text)" }}>
                 Select Payment Method *
               </label>
-              <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
-                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
-                  <input type="radio" name="Payment Method" value="Wise" required style={{ width: "16px", height: "16px" }} />
-                  Wise
-                </label>
-                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
-                  <input type="radio" name="Payment Method" value="Credit Card Link Payment" required style={{ width: "16px", height: "16px" }} />
-                  Credit Card Link Payment
-                </label>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+                  <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
+                    <input
+                      type="radio"
+                      name="Payment Method"
+                      value="Wise"
+                      checked={paymentMethod === "Wise"}
+                      onChange={() => setPaymentMethod("Wise")}
+                      required
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                    Wise
+                  </label>
+                  <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "normal", color: "var(--color-text)" }}>
+                    <input
+                      type="radio"
+                      name="Payment Method"
+                      value="Crypto"
+                      checked={paymentMethod === "Crypto"}
+                      onChange={() => setPaymentMethod("Crypto")}
+                      required
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                    Crypto
+                  </label>
+                </div>
+
+                {paymentMethod === "Crypto" && (
+                  <div className="form-group" style={{ marginTop: "0.25rem", maxWidth: "320px" }}>
+                    <label style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", marginBottom: "0.35rem" }}>
+                      Select Cryptocurrency *
+                    </label>
+                    <select
+                      name="Crypto Currency"
+                      value={cryptoCurrency}
+                      onChange={(e) => setCryptoCurrency(e.target.value)}
+                      required
+                      style={{
+                        padding: "0.6rem 0.8rem",
+                        borderRadius: "var(--radius-sm)",
+                        border: "1px solid var(--color-border)",
+                        background: "var(--color-bg)",
+                        color: "var(--color-text)",
+                        fontSize: "0.95rem",
+                        width: "100%",
+                        outline: "none"
+                      }}
+                    >
+                      <option value="BTC">BTC</option>
+                      <option value="TRC20(USDT)">TRC20(USDT)</option>
+                      <option value="SOL">SOL</option>
+                      <option value="LTC">LTC</option>
+                      <option value="ETH">ETH</option>
+                    </select>
+                  </div>
+                )}
               </div>
             </div>
 
